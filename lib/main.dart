@@ -1,24 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:gluco_pulse3/app_widget.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
-  }
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final documentDir = await getApplicationDocumentsDirectory();
+  Hive.init(documentDir.path);
+  runApp(const AppWidget());
 }
