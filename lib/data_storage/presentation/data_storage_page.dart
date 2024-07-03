@@ -6,6 +6,7 @@ import 'package:gluco_pulse3/core/widgets/colors.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../../core/shared/providers.dart';
 import '../aplication/box_data.dart';
 import '../domain/blood_sugar_entry.dart';
 
@@ -28,6 +29,7 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
 
   @override
   Widget build(BuildContext context) {
+    final name = ref.watch(nameProvider);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
@@ -50,7 +52,7 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Text(
-                      'Hello ',
+                      'Hello $name ',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         color: kButtonsTextColor,
@@ -78,7 +80,7 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
                   return ListView.builder(
                     itemCount: box.length,
                     itemBuilder: (context, index) {
-                      final entry = box.getAt(index);
+                      final entry = box.getAt(box.length - 1 - index);
                       if (entry is BloodSugarEntry) {
                         return Padding(
                           padding: const EdgeInsets.all(8),
@@ -101,7 +103,11 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
                                   child: NewCircle(
                                     bigHeight: screenSize.height * 0.16,
                                     bigWidth: screenSize.width * 0.37,
-                                    color: Colors.green,
+                                    color: entry.value > 7
+                                        ? kSugarHigh
+                                        : entry.value < 4
+                                            ? kSugarLow
+                                            : kSugarOkColor,
                                     smallHeight: screenSize.width * 0.3,
                                     smallWidth: screenSize.width * 0.3,
                                   ),
@@ -148,7 +154,8 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
                                             actions: [
                                               TextButton(
                                                 onPressed: () {
-                                                  box.deleteAt(index);
+                                                  box.deleteAt(
+                                                      box.length - 1 - index);
                                                   // ignore: use_build_context_synchronously
                                                   Navigator.pop(context);
                                                 },
@@ -166,7 +173,7 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
                                       );
                                     },
                                     icon: const Icon(Icons.delete),
-                                    color: kButtonsColor,
+                                    color: kButtonsTextColor,
                                   ),
                                 ),
                                 Positioned(
@@ -181,7 +188,7 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
                                       // Share.share('gluco pulse' );
                                     },
                                     icon: const Icon(Icons.share),
-                                    color: kButtonsColor,
+                                    color: kButtonsTextColor,
                                   ),
                                 ),
                                 Positioned(
@@ -195,6 +202,40 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
                                               0.042,
                                       fontWeight: FontWeight.bold,
                                     ),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: MediaQuery.sizeOf(context).height * 0.01,
+                                  left: MediaQuery.sizeOf(context).width * 0.56,
+                                  child: Container(
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.03,
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.3,
+                                    decoration: BoxDecoration(
+                                      color: kButtonsTextColor,
+                                      borderRadius: BorderRadius.circular(20),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: kBoxShadowColor,
+                                          offset: const Offset(5, 5),
+                                          blurRadius: 5,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: MediaQuery.sizeOf(context).height * 0.01,
+                                  left: MediaQuery.sizeOf(context).width * 0.62,
+                                  child: Text(
+                                    '${(entry.value * 18).toStringAsFixed(0)}mg/dl',
+                                    style: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.042,
+                                        fontWeight: FontWeight.bold,
+                                        color: kTextFieldFillColor),
                                   ),
                                 ),
                               ],
@@ -235,6 +276,7 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
                       myBox.add(value);
                       myController.clear();
                       setState(() {});
+                      Navigator.pop(context);
                     },
                     child: const Text('Save'),
                   ),

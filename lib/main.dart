@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gluco_pulse3/app_widget.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -9,5 +10,6 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(BloodSugarEntryAdapter());
   await Hive.openBox<BloodSugarEntry>('bloodSugarData');
-  runApp(const AppWidget());
+  await Hive.openBox<String>('nameBox');
+  runApp(const ProviderScope(child: AppWidget()));
 }

@@ -31,7 +31,11 @@ class GraphPage extends StatelessWidget {
                 barRods: [
                   BarChartRodData(
                       toY: entry.value.toDouble(),
-                      color: Colors.blue,
+                      color: entry.value > 7
+                          ? kSugarHigh
+                          : entry.value < 4
+                              ? kSugarLow
+                              : kSugarOkColor,
                       width: 15,
                       borderRadius: BorderRadius.circular(4)),
                 ],
