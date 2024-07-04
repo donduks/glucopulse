@@ -29,7 +29,8 @@ class InfoBox extends StatelessWidget {
               Radius.circular(30),
             ),
           ),
-          child: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 90, left: 20),
             child: text,
           ),
         ),

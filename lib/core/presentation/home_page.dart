@@ -262,46 +262,57 @@ class _HomePageState extends ConsumerState<HomePage> {
                   ),
                 ),
               ),
-              AppButton(
-                screenSize: screenSize,
-                height: screenSize.height * 0.04,
-                width: screenSize.width * 0.3,
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: const Text('Add Data'),
-                        content: TextField(
-                          keyboardType: TextInputType.number,
-                          controller: myController,
-                          decoration: const InputDecoration(
-                            hintText: 'Sugar Reading...',
-                          ),
-                        ),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              final double value =
-                                  double.tryParse(myController.text) ?? 0;
-                              myBox.add(value);
-                              myController.clear();
-                              setState(() {});
-                              Navigator.pop(context);
-                            },
-                            child: const Text('Save'),
-                          ),
-                        ],
+              Row(
+                children: [
+                  AppButton(
+                    screenSize: screenSize,
+                    height: screenSize.height * 0.03,
+                    width: screenSize.width * 0.3,
+                    onTap: () {},
+                    text: const Text('All Records'),
+                  ),
+                  AppButton(
+                    screenSize: screenSize,
+                    height: screenSize.height * 0.03,
+                    width: screenSize.width * 0.2,
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text('Add Data'),
+                            content: TextField(
+                              keyboardType: TextInputType.number,
+                              controller: myController,
+                              decoration: const InputDecoration(
+                                hintText: 'Sugar Reading...',
+                              ),
+                            ),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  final double value =
+                                      double.tryParse(myController.text) ?? 0;
+                                  myBox.add(value);
+                                  myController.clear();
+                                  setState(() {});
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('Save'),
+                              ),
+                            ],
+                          );
+                        },
                       );
+                      /*  Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DataStoragePage()),
+                      ); */
                     },
-                  );
-                  /*  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DataStoragePage()),
-                  ); */
-                },
-                text: const Text('Click to Add'),
+                    text: const Text('Add'),
+                  ),
+                ],
               ),
               SizedBox(
                 height: screenSize.height * 0.008,

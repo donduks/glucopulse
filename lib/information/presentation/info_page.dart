@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gluco_pulse3/core/presentation/theme.dart';
 
 import '../../core/shared/providers.dart';
 
@@ -48,8 +49,19 @@ class _InfoPageState extends ConsumerState<InfoPage> {
               child: const Text('click to enter name'))
         ],
       ),
-      body: const SafeArea(
-        child: Column(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AppThemePage()));
+                },
+                child: const Text('Switch Theme'))
+          ],
+        ),
       ),
     );
   }

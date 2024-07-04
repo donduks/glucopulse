@@ -108,7 +108,7 @@ class _DataStoragePageState extends ConsumerState<DataStoragePage> {
                                         : entry.value < 4
                                             ? kSugarLow
                                             : kSugarOkColor,
-                                    smallHeight: screenSize.width * 0.3,
+                                    smallHeight: screenSize.height * 0.3,
                                     smallWidth: screenSize.width * 0.3,
                                   ),
                                 ),
