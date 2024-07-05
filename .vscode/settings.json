@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
         "aplication",
-        "Mgdl"
+        "cicle",
+        "Mgdl",
+        "vsync"
     ],
     "editor.codeActionsOnSave": {
         "source.fixAll": "explicit"

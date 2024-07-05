@@ -1,12 +1,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:gluco_pulse3/core/infrastructure/get_cicle_color.dart';
 import 'package:gluco_pulse3/core/widgets/colors.dart';
 import 'package:gluco_pulse3/data_storage/domain/blood_sugar_entry.dart';
 import 'package:hive_flutter/adapters.dart';
 
-class GraphPage extends StatelessWidget {
-  const GraphPage({super.key});
+class GraphPageRandom extends StatelessWidget {
+  const GraphPageRandom({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,13 @@ class GraphPage extends StatelessWidget {
                 barRods: [
                   BarChartRodData(
                     toY: entry.value.toDouble(),
-                    color: getFastingCircleColor(entry.value),
+                    color: entry.value > 8.5
+                        ? kDiabetic
+                        : entry.value > 7.8
+                            ? kPreDiabetic
+                            : entry.value < 4
+                                ? kHypoglycemia
+                                : kSugarOkColor,
                     width: 15,
                     borderRadius: BorderRadius.circular(2),
                     backDrawRodData: BackgroundBarChartRodData(

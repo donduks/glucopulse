@@ -12,6 +12,7 @@ class Tabs extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final name = ref.watch(nameProvider);
+    final screenSize = MediaQuery.of(context).size;
 
     return DefaultTabController(
       length: 2,
@@ -21,9 +22,9 @@ class Tabs extends ConsumerWidget {
           title: Text(
             'Hello $name',
             style: TextStyle(
-              fontWeight: FontWeight.w700,
-              color: kButtonsTextColor,
-            ),
+                fontWeight: FontWeight.w700,
+                color: kButtonsTextColor,
+                fontSize: screenSize.width * 0.05),
           ),
           bottom: const TabBar(tabs: [
             Tab(text: 'mmol'),

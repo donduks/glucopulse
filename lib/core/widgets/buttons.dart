@@ -10,6 +10,7 @@ class AppButton extends StatelessWidget {
     required this.width,
     required this.onTap,
     required this.text,
+    required this.color,
   });
 
   final Size screenSize;
@@ -17,6 +18,7 @@ class AppButton extends StatelessWidget {
   final double width;
   final void Function() onTap;
   final Text text;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class AppButton extends StatelessWidget {
         height: height,
         width: width,
         decoration: BoxDecoration(
-          color: kTextFieldFillColor,
+          color: color,
           borderRadius: BorderRadius.circular(20),
           boxShadow: const [
             BoxShadow(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gluco_pulse3/core/presentation/graph_page_random.dart';
 import 'package:gluco_pulse3/core/shared/providers.dart';
 import 'package:gluco_pulse3/core/widgets/rectangles.dart';
 import 'package:gluco_pulse3/core/presentation/graph_page.dart';
@@ -8,6 +9,7 @@ import 'package:hive_flutter/adapters.dart';
 
 import '../../data_storage/aplication/box_data.dart';
 import '../../data_storage/domain/blood_sugar_entry.dart';
+import '../infrastructure/get_cicle_color.dart';
 import '../widgets/buttons.dart';
 import '../widgets/circles.dart';
 import '../widgets/colors.dart';
@@ -22,10 +24,14 @@ class HomePage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<HomePage> {
   final TextEditingController myController = TextEditingController();
   late BoxData myBox;
+  late bool isFasting;
+  late bool isRandom;
   @override
   void initState() {
     super.initState();
     myBox = BoxData();
+    isFasting = true;
+    isRandom = false;
   }
 
   @override
@@ -53,7 +59,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                 child: Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: screenSize.width * 0.03),
+                      padding: EdgeInsets.only(left: screenSize.width * 0.08),
                       child: Text(
                         'Hello $name',
                         style: TextStyle(
@@ -65,7 +71,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     ),
                     const Spacer(),
                     Padding(
-                      padding: EdgeInsets.only(right: screenSize.width * 0.04),
+                      padding: EdgeInsets.only(right: screenSize.width * 0.08),
                       child: CircleAvatar(
                         radius: 30,
                         backgroundImage: const AssetImage('images/beat.gif'),
@@ -80,13 +86,44 @@ class _HomePageState extends ConsumerState<HomePage> {
                   left: screenSize.width * 0.015,
                   top: screenSize.height * 0.02,
                 ),
-                child: Text(
-                  'My Recent Blood Sugar Level',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: screenSize.width * 0.04,
-                    color: kButtonsTextColor,
-                  ),
+                child: Row(
+                  children: [
+                    AppButton(
+                      screenSize: screenSize,
+                      height: screenSize.height * 0.03,
+                      width: screenSize.width * 0.2,
+                      onTap: () {
+                        setState(() {
+                          isFasting = true;
+                          isRandom = false;
+                        });
+                      },
+                      text: const Text(
+                        'Fasting',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      color: isFasting ? Colors.black : Colors.grey,
+                    ),
+                    const SizedBox(
+                      width: 45,
+                    ),
+                    AppButton(
+                      screenSize: screenSize,
+                      height: screenSize.height * 0.03,
+                      width: screenSize.width * 0.2,
+                      onTap: () {
+                        setState(() {
+                          isRandom = true;
+                          isFasting = false;
+                        });
+                      },
+                      text: const Text(
+                        'Random',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      color: isRandom ? Colors.black : Colors.grey,
+                    ),
+                  ],
                 ),
               ),
               SingleChildScrollView(
@@ -102,10 +139,12 @@ class _HomePageState extends ConsumerState<HomePage> {
                         width: screenSize.width * 0.9,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20)),
-                        child: const GraphPage(),
+                        child: isFasting
+                            ? const GraphPage()
+                            : const GraphPageRandom(),
                       ),
-                      const SizedBox(
-                        width: 12,
+                      SizedBox(
+                        width: screenSize.width * 0.03,
                       ),
                       Container(
                         height: screenSize.height * 0.3,
@@ -130,8 +169,8 @@ class _HomePageState extends ConsumerState<HomePage> {
                                   ? Stack(
                                       children: [
                                         Positioned(
-                                          top: 5,
-                                          left: 35,
+                                          top: screenSize.height * 0.01,
+                                          left: screenSize.width * 0.08,
                                           child: Text(
                                             'Recent',
                                             style: TextStyle(
@@ -150,11 +189,8 @@ class _HomePageState extends ConsumerState<HomePage> {
                                           child: NewCircle(
                                             bigHeight: screenSize.height * 0.16,
                                             bigWidth: screenSize.width * 0.37,
-                                            color: latestEntry.value > 7
-                                                ? kSugarHigh
-                                                : latestEntry.value < 4
-                                                    ? kSugarLow
-                                                    : kSugarOkColor,
+                                            color: getCircleColor(
+                                                isFasting, latestEntry.value),
                                             smallHeight: screenSize.width * 0.3,
                                             smallWidth: screenSize.width * 0.3,
                                           ),
@@ -184,26 +220,32 @@ class _HomePageState extends ConsumerState<HomePage> {
                                         Positioned(
                                           top: screenSize.height * 0.15,
                                           left: screenSize.width * 0.58,
-                                          child: Text(
-                                            'fasting',
-                                            style: TextStyle(
-                                              fontSize: screenSize.width * 0.05,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
+                                          child: isFasting
+                                              ? Text(
+                                                  'fasting',
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        screenSize.width * 0.05,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                )
+                                              : Text(
+                                                  'Random',
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        screenSize.width * 0.05,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
                                         ),
                                         Positioned(
                                           top: screenSize.height * 0.018,
                                           left: screenSize.width * 0.77,
                                           child: CircleAvatar(
-                                            radius: 6,
-                                            backgroundColor:
-                                                latestEntry.value > 7
-                                                    ? kSugarHigh
-                                                    : latestEntry.value < 4
-                                                        ? kSugarLow
-                                                        : kSugarOkColor,
-                                          ),
+                                              radius: 6,
+                                              backgroundColor: getCircleColor(
+                                                  isFasting,
+                                                  latestEntry.value)),
                                         ),
                                         Positioned(
                                           top: MediaQuery.sizeOf(context)
@@ -270,6 +312,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     width: screenSize.width * 0.3,
                     onTap: () {},
                     text: const Text('All Records'),
+                    color: kTextFieldFillColor,
                   ),
                   AppButton(
                     screenSize: screenSize,
@@ -311,6 +354,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                       ); */
                     },
                     text: const Text('Add'),
+                    color: kTextFieldFillColor,
                   ),
                 ],
               ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:gluco_pulse3/data_storage/presentation/data_storage_page.dart';
+import 'package:gluco_pulse3/data_storage/presentation/fasting_storage_page.dart';
 import 'package:gluco_pulse3/information/presentation/info_page.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../converter/core/tabs.dart';
+import '../../data_storage/presentation/data_storage_page.dart';
 import '../presentation/home_page.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -18,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final screens = [
     const HomePage(),
     const Tabs(),
-    const DataStoragePage(),
+    const AppDataStoragePage(),
     const InfoPage(),
   ];
 
