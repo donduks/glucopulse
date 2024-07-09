@@ -15,14 +15,18 @@ class NumberButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: kButtonsColor,
+    return SizedBox(
+      height: MediaQuery.sizeOf(context).height * 0.08,
+      width: MediaQuery.sizeOf(context).width * 0.25,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: kButtonsColor,
+        ),
+        onPressed: () =>
+            ref.read(numberProvider.notifier).onNumberPressed(number),
+        //onNumberPressed(number),
+        child: Text(number),
       ),
-      onPressed: () =>
-          ref.read(numberProvider.notifier).onNumberPressed(number),
-      //onNumberPressed(number),
-      child: Text(number),
     );
   }
 }

@@ -10,6 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(BloodSugarEntryAdapter());
+  Hive.registerAdapter(BloodSugarEntry2Adapter());
   await Hive.openBox<BloodSugarEntry>('bloodSugarData');
   await Hive.openBox<BloodSugarEntry2>('bloodSugarData2');
   await Hive.openBox<String>('nameBox');

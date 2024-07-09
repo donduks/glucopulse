@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart';
-
 class AppButton extends StatelessWidget {
   const AppButton({
     super.key,
@@ -11,6 +9,7 @@ class AppButton extends StatelessWidget {
     required this.onTap,
     required this.text,
     required this.color,
+    required this.offset,
   });
 
   final Size screenSize;
@@ -19,6 +18,7 @@ class AppButton extends StatelessWidget {
   final void Function() onTap;
   final Text text;
   final Color color;
+  final Offset offset;
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +33,9 @@ class AppButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(20),
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
-              offset: Offset(1, 0),
+              offset: offset,
               blurRadius: 3,
             ),
           ],

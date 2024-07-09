@@ -4,21 +4,20 @@ import 'package:gluco_pulse3/core/infrastructure/get_cicle_color.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../../core/shared/providers.dart';
 import '../../core/widgets/circles.dart';
 import '../../core/widgets/colors.dart';
 import '../aplication/box_data2.dart';
 import '../domain/blood_sugar_entry2.dart';
 
-class DataStorageRandom extends ConsumerStatefulWidget {
-  const DataStorageRandom({super.key});
+class RandomDataPage extends ConsumerStatefulWidget {
+  const RandomDataPage({super.key});
 
   @override
-  ConsumerState<DataStorageRandom> createState() => _DataStorageRandomState();
+  ConsumerState<RandomDataPage> createState() => _RandomDataPageState();
 }
 
-class _DataStorageRandomState extends ConsumerState<DataStorageRandom> {
-  final TextEditingController myController = TextEditingController();
+class _RandomDataPageState extends ConsumerState<RandomDataPage> {
+  final TextEditingController myController2 = TextEditingController();
   late BoxData2 myBox2;
   late bool isFasting;
   late bool isRandom;
@@ -33,51 +32,11 @@ class _DataStorageRandomState extends ConsumerState<DataStorageRandom> {
 
   @override
   Widget build(BuildContext context) {
-    final name = ref.watch(nameProvider);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              width: MediaQuery.sizeOf(context).width,
-              height: screenSize.height * 0.15,
-              decoration: BoxDecoration(
-                color: kTextFieldFillColor,
-                boxShadow: const [
-                  BoxShadow(
-                    offset: Offset(5, 0),
-                    blurRadius: 3,
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: screenSize.width * 0.08),
-                    child: Text(
-                      'Hello $name ',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        color: kButtonsTextColor,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: screenSize.width * 0.08),
-                    child: CircleAvatar(
-                      radius: 30,
-                      backgroundImage: const AssetImage('images/beat.gif'),
-                      backgroundColor: kButtonsColor,
-                    ),
-                  ),
-                ],
-              ),
-            ),
             const SizedBox(
               height: 12,
             ),
@@ -187,7 +146,7 @@ class _DataStorageRandomState extends ConsumerState<DataStorageRandom> {
                                   child: IconButton(
                                     onPressed: () {
                                       Share.share(
-                                        'Fasting \nSugar Level: ${entry.value.toString()}mmol, \nDate:${entry.dateTime.toString()},'
+                                        'Random \nSugar Level: ${entry.value.toString()}mmol, \nDate:${entry.dateTime.toString()},'
                                         '\ngluco pulse',
                                       );
                                       // Share.share('gluco pulse' );
@@ -200,7 +159,7 @@ class _DataStorageRandomState extends ConsumerState<DataStorageRandom> {
                                   top: MediaQuery.sizeOf(context).height * 0.03,
                                   left: MediaQuery.sizeOf(context).width * 0.32,
                                   child: Text(
-                                    'Fasting',
+                                    'Random',
                                     style: TextStyle(
                                       fontSize:
                                           MediaQuery.of(context).size.width *
@@ -258,44 +217,40 @@ class _DataStorageRandomState extends ConsumerState<DataStorageRandom> {
           ],
         ),
       ),
-      floatingActionButton: appFloatingActionButtonRandom(context),
-    );
-  }
-
-  FloatingActionButton appFloatingActionButtonRandom(BuildContext context) {
-    return FloatingActionButton(
-      backgroundColor: kButtonsTextColor,
-      child: const Text('Add'),
-      onPressed: () {
-        showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: const Text('Add Data'),
-              content: TextField(
-                keyboardType: TextInputType.number,
-                controller: myController,
-                decoration: const InputDecoration(
-                  hintText: 'Sugar Reading...',
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: kButtonsTextColor,
+        child: const Text('Add'),
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: const Text('Add Data'),
+                content: TextField(
+                  keyboardType: TextInputType.number,
+                  controller: myController2,
+                  decoration: const InputDecoration(
+                    hintText: 'Sugar Reading...',
+                  ),
                 ),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    final double value =
-                        double.tryParse(myController.text) ?? 0;
-                    myBox2.add(value);
-                    myController.clear();
-                    setState(() {});
-                    Navigator.pop(context);
-                  },
-                  child: const Text('Save'),
-                ),
-              ],
-            );
-          },
-        );
-      },
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      final double value =
+                          double.tryParse(myController2.text) ?? 0;
+                      myBox2.add(value);
+                      myController2.clear();
+                      setState(() {});
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Save'),
+                  ),
+                ],
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

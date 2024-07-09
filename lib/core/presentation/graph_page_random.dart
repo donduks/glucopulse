@@ -1,8 +1,10 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:gluco_pulse3/core/infrastructure/get_cicle_color.dart';
 import 'package:gluco_pulse3/core/widgets/colors.dart';
-import 'package:gluco_pulse3/data_storage/domain/blood_sugar_entry.dart';
 import 'package:hive_flutter/adapters.dart';
+
+import '../../data_storage/domain/blood_sugar_entry2.dart';
 
 class GraphPageRandom extends StatelessWidget {
   const GraphPageRandom({super.key});
@@ -13,8 +15,8 @@ class GraphPageRandom extends StatelessWidget {
       backgroundColor: kTextFieldFillColor,
       body: ValueListenableBuilder(
         valueListenable:
-            Hive.box<BloodSugarEntry>('bloodSugarData').listenable(),
-        builder: (context, Box<BloodSugarEntry> box, _) {
+            Hive.box<BloodSugarEntry2>('bloodSugarData2').listenable(),
+        builder: (context, Box<BloodSugarEntry2> box, _) {
           if (box.isEmpty) {
             return const Center(
               child: Text('No data available'),
@@ -24,20 +26,14 @@ class GraphPageRandom extends StatelessWidget {
           // Prepare data for the bar chart
           final barGroups = <BarChartGroupData>[];
           for (int i = 0; i < box.length; i++) {
-            final entry = box.getAt(i) as BloodSugarEntry;
+            final entry = box.getAt(i) as BloodSugarEntry2;
             barGroups.add(
               BarChartGroupData(
                 x: i,
                 barRods: [
                   BarChartRodData(
                     toY: entry.value.toDouble(),
-                    color: entry.value > 8.5
-                        ? kDiabetic
-                        : entry.value > 7.8
-                            ? kPreDiabetic
-                            : entry.value < 4
-                                ? kHypoglycemia
-                                : kSugarOkColor,
+                    color: getRandomCircleColor(entry.value),
                     width: 15,
                     borderRadius: BorderRadius.circular(2),
                     backDrawRodData: BackgroundBarChartRodData(
@@ -68,7 +64,7 @@ class GraphPageRandom extends StatelessWidget {
                       showTitles: true,
                       getTitlesWidget: (double value, TitleMeta meta) {
                         final entry =
-                            box.getAt(value.toInt()) as BloodSugarEntry;
+                            box.getAt(value.toInt()) as BloodSugarEntry2;
                         return SideTitleWidget(
                           axisSide: meta.axisSide,
                           angle: 0,

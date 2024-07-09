@@ -6,7 +6,7 @@ class BoxData2 {
   late Box<BloodSugarEntry2> box2;
 
   BoxData2() {
-    box2 = Hive.box<BloodSugarEntry2>('bloodSugarData');
+    box2 = Hive.box<BloodSugarEntry2>('bloodSugarData2');
   }
 
   void add(double value) {

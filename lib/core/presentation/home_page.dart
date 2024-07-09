@@ -8,7 +8,9 @@ import 'package:gluco_pulse3/core/presentation/info_cards.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import '../../data_storage/aplication/box_data.dart';
+import '../../data_storage/aplication/box_data2.dart';
 import '../../data_storage/domain/blood_sugar_entry.dart';
+import '../../data_storage/domain/blood_sugar_entry2.dart';
 import '../infrastructure/get_cicle_color.dart';
 import '../widgets/buttons.dart';
 import '../widgets/circles.dart';
@@ -23,13 +25,16 @@ class HomePage extends ConsumerStatefulWidget {
 
 class _HomePageState extends ConsumerState<HomePage> {
   final TextEditingController myController = TextEditingController();
+  final TextEditingController myController2 = TextEditingController();
   late BoxData myBox;
+  late BoxData2 myBox2;
   late bool isFasting;
   late bool isRandom;
   @override
   void initState() {
     super.initState();
     myBox = BoxData();
+    myBox2 = BoxData2();
     isFasting = true;
     isRandom = false;
   }
@@ -102,10 +107,12 @@ class _HomePageState extends ConsumerState<HomePage> {
                         'Fasting',
                         style: TextStyle(color: Colors.white),
                       ),
-                      color: isFasting ? Colors.black : Colors.grey,
+                      color: isFasting ? Colors.blue : Colors.grey,
+                      offset:
+                          isFasting ? const Offset(0, 3) : const Offset(0, 0),
                     ),
-                    const SizedBox(
-                      width: 45,
+                    SizedBox(
+                      width: screenSize.width * 0.23,
                     ),
                     AppButton(
                       screenSize: screenSize,
@@ -121,7 +128,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                         'Random',
                         style: TextStyle(color: Colors.white),
                       ),
-                      color: isRandom ? Colors.black : Colors.grey,
+                      color: isRandom ? Colors.blue : Colors.grey,
+                      offset:
+                          isRandom ? const Offset(0, 3) : const Offset(0, 0),
                     ),
                   ],
                 ),
@@ -129,14 +138,14 @@ class _HomePageState extends ConsumerState<HomePage> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: screenSize.width * 0.03,
+                  padding: EdgeInsets.only(
+                    left: screenSize.width * 0.02,
                   ),
                   child: Row(
                     children: [
                       Container(
                         height: screenSize.height * 0.3,
-                        width: screenSize.width * 0.9,
+                        width: screenSize.width * 0.8,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20)),
                         child: isFasting
@@ -155,150 +164,312 @@ class _HomePageState extends ConsumerState<HomePage> {
                             Radius.circular(20),
                           ),
                         ),
-                        child: ValueListenableBuilder(
-                          valueListenable:
-                              Hive.box<BloodSugarEntry>('bloodSugarData')
-                                  .listenable(),
-                          builder: (context, Box<BloodSugarEntry> box, _) {
-                            // Get the latest entry
-                            final latestEntry = box.isNotEmpty
-                                ? box.getAt(box.length - 1)
-                                : null;
-                            return Center(
-                              child: latestEntry != null
-                                  ? Stack(
-                                      children: [
-                                        Positioned(
-                                          top: screenSize.height * 0.01,
-                                          left: screenSize.width * 0.08,
-                                          child: Text(
-                                            'Recent',
-                                            style: TextStyle(
-                                                fontSize:
-                                                    screenSize.width * 0.05),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          top: screenSize.height * 0.045,
-                                          left: screenSize.width * 0.05,
-                                          child: const Rectangle(),
-                                        ),
-                                        Positioned(
-                                          top: screenSize.height * 0.065,
-                                          left: screenSize.width * 0.2,
-                                          child: NewCircle(
-                                            bigHeight: screenSize.height * 0.16,
-                                            bigWidth: screenSize.width * 0.37,
-                                            color: getCircleColor(
-                                                isFasting, latestEntry.value),
-                                            smallHeight: screenSize.width * 0.3,
-                                            smallWidth: screenSize.width * 0.3,
-                                          ),
-                                        ),
-                                        Positioned(
-                                          top: screenSize.height * 0.14,
-                                          left: screenSize.width * 0.25,
-                                          child: Text(
-                                            '${latestEntry.value.toString()} mmol',
-                                            style: TextStyle(
-                                              fontSize: screenSize.width * 0.05,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          top: screenSize.height * 0.175,
-                                          left: screenSize.width * 0.57,
-                                          child: Text(
-                                            '${latestEntry.dateTime.day.toString()}/${latestEntry.dateTime.month.toString()}/${latestEntry.dateTime.year.toString()}',
-                                            style: TextStyle(
-                                              fontSize: screenSize.width * 0.05,
-                                              color: Colors.black38,
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          top: screenSize.height * 0.15,
-                                          left: screenSize.width * 0.58,
-                                          child: isFasting
-                                              ? Text(
-                                                  'fasting',
+                        child: isFasting
+                            ? ValueListenableBuilder(
+                                valueListenable:
+                                    Hive.box<BloodSugarEntry>('bloodSugarData')
+                                        .listenable(),
+                                builder:
+                                    (context, Box<BloodSugarEntry> box, _) {
+                                  // Get the latest entry
+                                  final latestEntry = box.isNotEmpty
+                                      ? box.getAt(box.length - 1)
+                                      : null;
+                                  return Center(
+                                    child: latestEntry != null
+                                        ? Stack(
+                                            children: [
+                                              Positioned(
+                                                top: screenSize.height * 0.01,
+                                                left: screenSize.width * 0.08,
+                                                child: Text(
+                                                  'Recent',
                                                   style: TextStyle(
-                                                    fontSize:
-                                                        screenSize.width * 0.05,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                )
-                                              : Text(
-                                                  'Random',
+                                                      fontSize:
+                                                          screenSize.width *
+                                                              0.05),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.045,
+                                                left: screenSize.width * 0.05,
+                                                child: const Rectangle(),
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.065,
+                                                left: screenSize.width * 0.2,
+                                                child: NewCircle(
+                                                  bigHeight:
+                                                      screenSize.height * 0.16,
+                                                  bigWidth:
+                                                      screenSize.width * 0.37,
+                                                  color: getCircleColor(
+                                                      isFasting,
+                                                      latestEntry.value),
+                                                  smallHeight:
+                                                      screenSize.width * 0.3,
+                                                  smallWidth:
+                                                      screenSize.width * 0.3,
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.14,
+                                                left: screenSize.width * 0.25,
+                                                child: Text(
+                                                  '${latestEntry.value.toString()} mmol',
                                                   style: TextStyle(
                                                     fontSize:
                                                         screenSize.width * 0.05,
                                                     fontWeight: FontWeight.bold,
                                                   ),
                                                 ),
-                                        ),
-                                        Positioned(
-                                          top: screenSize.height * 0.018,
-                                          left: screenSize.width * 0.77,
-                                          child: CircleAvatar(
-                                              radius: 6,
-                                              backgroundColor: getCircleColor(
-                                                  isFasting,
-                                                  latestEntry.value)),
-                                        ),
-                                        Positioned(
-                                          top: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.045,
-                                          left:
-                                              MediaQuery.sizeOf(context).width *
-                                                  0.5,
-                                          child: Container(
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                0.03,
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                0.3,
-                                            decoration: BoxDecoration(
-                                              color: kButtonsTextColor,
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: kBoxShadowColor,
-                                                  offset: const Offset(5, 5),
-                                                  blurRadius: 5,
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          top: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              0.045,
-                                          left:
-                                              MediaQuery.sizeOf(context).width *
-                                                  0.55,
-                                          child: Text(
-                                            '${(latestEntry.value * 18).toStringAsFixed(0)}mg/dl',
-                                            style: TextStyle(
-                                                fontSize: MediaQuery.of(context)
-                                                        .size
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.175,
+                                                left: screenSize.width * 0.57,
+                                                child: Text(
+                                                  '${latestEntry.dateTime.day.toString()}/${latestEntry.dateTime.month.toString()}/${latestEntry.dateTime.year.toString()}',
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        screenSize.width * 0.05,
+                                                    color: Colors.black38,
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                  top: screenSize.height * 0.15,
+                                                  left: screenSize.width * 0.58,
+                                                  child: Text(
+                                                    'fasting',
+                                                    style: TextStyle(
+                                                      fontSize:
+                                                          screenSize.width *
+                                                              0.05,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  )),
+                                              Positioned(
+                                                top: screenSize.height * 0.018,
+                                                left: screenSize.width * 0.77,
+                                                child: CircleAvatar(
+                                                    radius: 6,
+                                                    backgroundColor:
+                                                        getCircleColor(
+                                                            isFasting,
+                                                            latestEntry.value)),
+                                              ),
+                                              Positioned(
+                                                top: MediaQuery.sizeOf(context)
+                                                        .height *
+                                                    0.045,
+                                                left: MediaQuery.sizeOf(context)
                                                         .width *
-                                                    0.042,
-                                                fontWeight: FontWeight.bold,
-                                                color: kTextFieldFillColor),
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                  : const Text('No entries yet'),
-                            );
-                          },
-                        ),
+                                                    0.5,
+                                                child: Container(
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.03,
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.3,
+                                                  decoration: BoxDecoration(
+                                                    color: kButtonsTextColor,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20),
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        color: kBoxShadowColor,
+                                                        offset:
+                                                            const Offset(5, 5),
+                                                        blurRadius: 5,
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: MediaQuery.sizeOf(context)
+                                                        .height *
+                                                    0.045,
+                                                left: MediaQuery.sizeOf(context)
+                                                        .width *
+                                                    0.55,
+                                                child: Text(
+                                                  '${(latestEntry.value * 18).toStringAsFixed(0)}mg/dl',
+                                                  style: TextStyle(
+                                                      fontSize:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.042,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color:
+                                                          kTextFieldFillColor),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        : const Text('No entries yet'),
+                                  );
+                                },
+                              )
+                            : ValueListenableBuilder(
+                                valueListenable: Hive.box<BloodSugarEntry2>(
+                                        'bloodSugarData2')
+                                    .listenable(),
+                                builder:
+                                    (context, Box<BloodSugarEntry2> box, _) {
+                                  // Get the latest entry
+                                  final latestEntry = box.isNotEmpty
+                                      ? box.getAt(box.length - 1)
+                                      : null;
+                                  return Center(
+                                    child: latestEntry != null
+                                        ? Stack(
+                                            children: [
+                                              Positioned(
+                                                top: screenSize.height * 0.01,
+                                                left: screenSize.width * 0.08,
+                                                child: Text(
+                                                  'Recent',
+                                                  style: TextStyle(
+                                                      fontSize:
+                                                          screenSize.width *
+                                                              0.05),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.045,
+                                                left: screenSize.width * 0.05,
+                                                child: const Rectangle(),
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.065,
+                                                left: screenSize.width * 0.2,
+                                                child: NewCircle(
+                                                  bigHeight:
+                                                      screenSize.height * 0.16,
+                                                  bigWidth:
+                                                      screenSize.width * 0.37,
+                                                  color: getRandomCircleColor(
+                                                      latestEntry.value),
+                                                  smallHeight:
+                                                      screenSize.width * 0.3,
+                                                  smallWidth:
+                                                      screenSize.width * 0.3,
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.14,
+                                                left: screenSize.width * 0.25,
+                                                child: Text(
+                                                  '${latestEntry.value.toString()} mmol',
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        screenSize.width * 0.05,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.175,
+                                                left: screenSize.width * 0.57,
+                                                child: Text(
+                                                  '${latestEntry.dateTime.day.toString()}/${latestEntry.dateTime.month.toString()}/${latestEntry.dateTime.year.toString()}',
+                                                  style: TextStyle(
+                                                    fontSize:
+                                                        screenSize.width * 0.05,
+                                                    color: Colors.black38,
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                  top: screenSize.height * 0.15,
+                                                  left: screenSize.width * 0.58,
+                                                  child: Text(
+                                                    'Random',
+                                                    style: TextStyle(
+                                                      fontSize:
+                                                          screenSize.width *
+                                                              0.05,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  )),
+                                              Positioned(
+                                                top: screenSize.height * 0.018,
+                                                left: screenSize.width * 0.77,
+                                                child: CircleAvatar(
+                                                  radius: 6,
+                                                  backgroundColor:
+                                                      getRandomCircleColor(
+                                                          latestEntry.value),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: MediaQuery.sizeOf(context)
+                                                        .height *
+                                                    0.045,
+                                                left: MediaQuery.sizeOf(context)
+                                                        .width *
+                                                    0.5,
+                                                child: Container(
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.03,
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.3,
+                                                  decoration: BoxDecoration(
+                                                    color: kButtonsTextColor,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20),
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        color: kBoxShadowColor,
+                                                        offset:
+                                                            const Offset(5, 5),
+                                                        blurRadius: 5,
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                top: MediaQuery.sizeOf(context)
+                                                        .height *
+                                                    0.045,
+                                                left: MediaQuery.sizeOf(context)
+                                                        .width *
+                                                    0.55,
+                                                child: Text(
+                                                  '${(latestEntry.value * 18).toStringAsFixed(0)}mg/dl',
+                                                  style: TextStyle(
+                                                      fontSize:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.042,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color:
+                                                          kTextFieldFillColor),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        : const Text('No entries yet'),
+                                  );
+                                },
+                              ),
                       ),
                     ],
                   ),
@@ -313,40 +484,75 @@ class _HomePageState extends ConsumerState<HomePage> {
                     onTap: () {},
                     text: const Text('All Records'),
                     color: kTextFieldFillColor,
+                    offset: const Offset(0, 3),
+                  ),
+                  SizedBox(
+                    width: screenSize.width * 0.18,
                   ),
                   AppButton(
                     screenSize: screenSize,
                     height: screenSize.height * 0.03,
                     width: screenSize.width * 0.2,
                     onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: const Text('Add Data'),
-                            content: TextField(
-                              keyboardType: TextInputType.number,
-                              controller: myController,
-                              decoration: const InputDecoration(
-                                hintText: 'Sugar Reading...',
-                              ),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  final double value =
-                                      double.tryParse(myController.text) ?? 0;
-                                  myBox.add(value);
-                                  myController.clear();
-                                  setState(() {});
-                                  Navigator.pop(context);
-                                },
-                                child: const Text('Save'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
+                      isFasting
+                          ? showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: const Text('Add FBS Data'),
+                                  content: TextField(
+                                    keyboardType: TextInputType.number,
+                                    controller: myController,
+                                    decoration: const InputDecoration(
+                                      hintText: 'Add in mmol',
+                                    ),
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        final double value = double.tryParse(
+                                                myController.text) ??
+                                            0;
+                                        myBox.add(value);
+                                        myController.clear();
+                                        setState(() {});
+                                        Navigator.pop(context);
+                                      },
+                                      child: const Text('Save'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            )
+                          : showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: const Text('Add RBS Data'),
+                                  content: TextField(
+                                    keyboardType: TextInputType.number,
+                                    controller: myController2,
+                                    decoration: const InputDecoration(
+                                      hintText: 'Add in mmol',
+                                    ),
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        final double value = double.tryParse(
+                                                myController2.text) ??
+                                            0;
+                                        myBox2.add(value);
+                                        myController2.clear();
+                                        setState(() {});
+                                        Navigator.pop(context);
+                                      },
+                                      child: const Text('Save'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
                       /*  Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -355,6 +561,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     },
                     text: const Text('Add'),
                     color: kTextFieldFillColor,
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),

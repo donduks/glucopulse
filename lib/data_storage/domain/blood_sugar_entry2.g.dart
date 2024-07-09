@@ -8,7 +8,7 @@ part of 'blood_sugar_entry2.dart';
 
 class BloodSugarEntry2Adapter extends TypeAdapter<BloodSugarEntry2> {
   @override
-  final int typeId = 0;
+  final int typeId = 1;
 
   @override
   BloodSugarEntry2 read(BinaryReader reader) {

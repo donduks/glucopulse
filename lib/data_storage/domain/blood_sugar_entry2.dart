@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 part 'blood_sugar_entry2.g.dart';
 
-@HiveType(typeId: 0)
+@HiveType(typeId: 1)
 class BloodSugarEntry2 extends HiveObject {
   @HiveField(0)
   double value;

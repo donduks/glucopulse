@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gluco_pulse3/core/infrastructure/get_cicle_color.dart';
 import 'package:gluco_pulse3/core/widgets/circles.dart';
 import 'package:gluco_pulse3/core/widgets/colors.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../../core/shared/providers.dart';
 import '../aplication/box_data.dart';
 import '../domain/blood_sugar_entry.dart';
 
@@ -33,51 +33,11 @@ class _FastingDataPageState extends ConsumerState<FastingDataPage> {
 
   @override
   Widget build(BuildContext context) {
-    final name = ref.watch(nameProvider);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              width: MediaQuery.sizeOf(context).width,
-              height: screenSize.height * 0.15,
-              decoration: BoxDecoration(
-                color: kTextFieldFillColor,
-                boxShadow: const [
-                  BoxShadow(
-                    offset: Offset(5, 0),
-                    blurRadius: 3,
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: screenSize.width * 0.08),
-                    child: Text(
-                      'Hello $name ',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        color: kButtonsTextColor,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: screenSize.width * 0.08),
-                    child: CircleAvatar(
-                      radius: 30,
-                      backgroundImage: const AssetImage('images/beat.gif'),
-                      backgroundColor: kButtonsColor,
-                    ),
-                  ),
-                ],
-              ),
-            ),
             const SizedBox(
               height: 12,
             ),
@@ -112,13 +72,7 @@ class _FastingDataPageState extends ConsumerState<FastingDataPage> {
                                   child: NewCircle(
                                     bigHeight: screenSize.height * 0.16,
                                     bigWidth: screenSize.width * 0.37,
-                                    color: entry.value > 7
-                                        ? kDiabetic
-                                        : entry.value > 5.5
-                                            ? kPreDiabetic
-                                            : entry.value < 4
-                                                ? kHypoglycemia
-                                                : kSugarOkColor,
+                                    color: getFastingCircleColor(entry.value),
                                     smallHeight: screenSize.height * 0.3,
                                     smallWidth: screenSize.width * 0.3,
                                   ),
