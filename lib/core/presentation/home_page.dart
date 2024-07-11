@@ -107,7 +107,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                         'Fasting',
                         style: TextStyle(color: Colors.white),
                       ),
-                      color: isFasting ? Colors.blue : Colors.grey,
+                      color: isFasting ? kOn : kOffed,
                       offset:
                           isFasting ? const Offset(0, 3) : const Offset(0, 0),
                     ),
@@ -128,7 +128,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                         'Random',
                         style: TextStyle(color: Colors.white),
                       ),
-                      color: isRandom ? Colors.blue : Colors.grey,
+                      color: isRandom ? kOn : kOffed,
                       offset:
                           isRandom ? const Offset(0, 3) : const Offset(0, 0),
                     ),

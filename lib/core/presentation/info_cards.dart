@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gluco_pulse3/core/presentation/detail_pages/learn_about_bs.dart';
 import 'package:gluco_pulse3/core/widgets/info_box.dart';
 import 'package:gluco_pulse3/core/widgets/text_style.dart';
 
@@ -17,7 +18,12 @@ class InfoCards extends StatelessWidget {
             InfoBox(
               image: const AssetImage('images/labs.jpg'),
               text: Text('Learn about Blood Sugar', style: infoCardStyle),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LearnAboutBS()));
+              },
             ),
             SizedBox(height: screenSize.height * 0.012),
             InfoBox(
