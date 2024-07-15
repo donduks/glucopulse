@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gluco_pulse3/core/presentation/detail_pages/diet_plan.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/learn_about_bs.dart';
 import 'package:gluco_pulse3/core/widgets/info_box.dart';
 import 'package:gluco_pulse3/core/widgets/text_style.dart';
@@ -32,7 +33,10 @@ class InfoCards extends StatelessWidget {
                 'Diet Plan',
                 style: infoCardStyle,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const DietPlan()));
+              },
             ),
             SizedBox(height: screenSize.height * 0.012),
             InfoBox(
@@ -61,6 +65,7 @@ class InfoCards extends StatelessWidget {
               ),
               onTap: () {},
             ),
+            SizedBox(height: screenSize.height * 0.08),
           ],
         ),
       ),
