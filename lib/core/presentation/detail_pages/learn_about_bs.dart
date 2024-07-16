@@ -9,10 +9,8 @@ class LearnAboutBS extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: kInfoPage,
       appBar: AppBar(
         title: const Text('Learn About Blood Sugar'),
-        backgroundColor: kInfoPage,
       ),
       body: Center(
         child: Column(
@@ -44,9 +42,9 @@ class LearnAboutBS extends StatelessWidget {
                       symptoms,
                       Row(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                             radius: 4,
-                            backgroundColor: Colors.brown,
+                            backgroundColor: kButtonsTextColor,
                           ),
                           SizedBox(
                             width: screenSize.width * 0.08,
@@ -56,9 +54,9 @@ class LearnAboutBS extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                             radius: 4,
-                            backgroundColor: Colors.brown,
+                            backgroundColor: kButtonsTextColor,
                           ),
                           SizedBox(
                             width: screenSize.width * 0.08,
@@ -68,9 +66,9 @@ class LearnAboutBS extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                             radius: 4,
-                            backgroundColor: Colors.brown,
+                            backgroundColor: kButtonsTextColor,
                           ),
                           SizedBox(
                             width: screenSize.width * 0.08,
@@ -80,9 +78,9 @@ class LearnAboutBS extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                             radius: 4,
-                            backgroundColor: Colors.brown,
+                            backgroundColor: kButtonsTextColor,
                           ),
                           SizedBox(
                             width: screenSize.width * 0.08,
@@ -92,9 +90,9 @@ class LearnAboutBS extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                             radius: 4,
-                            backgroundColor: Colors.brown,
+                            backgroundColor: kButtonsTextColor,
                           ),
                           SizedBox(
                             width: screenSize.width * 0.08,
@@ -104,9 +102,9 @@ class LearnAboutBS extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                             radius: 4,
-                            backgroundColor: Colors.brown,
+                            backgroundColor: kButtonsTextColor,
                           ),
                           SizedBox(
                             width: screenSize.width * 0.08,
@@ -116,9 +114,9 @@ class LearnAboutBS extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                             radius: 4,
-                            backgroundColor: Colors.brown,
+                            backgroundColor: kButtonsTextColor,
                           ),
                           SizedBox(
                             width: screenSize.width * 0.08,

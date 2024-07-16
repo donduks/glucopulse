@@ -1,0 +1,12 @@
+return Scaffold(
+      appBar: AppBar(
+        title: const Text('Role Of Vitamin in Diabetes'),
+      ),
+      body: Center(
+        child: SizedBox(
+          height: screenSize.height * 0.8,
+          width: screenSize.width * 0.9,
+          child: const SingleChildScrollView(),
+        ),
+      ),
+    );

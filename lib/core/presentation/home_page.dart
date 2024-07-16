@@ -11,7 +11,7 @@ import '../../data_storage/aplication/box_data.dart';
 import '../../data_storage/aplication/box_data2.dart';
 import '../../data_storage/domain/blood_sugar_entry.dart';
 import '../../data_storage/domain/blood_sugar_entry2.dart';
-import '../infrastructure/get_cicle_color.dart';
+import '../infrastructure/sugar_measurement_color.dart';
 import '../widgets/buttons.dart';
 import '../widgets/circles.dart';
 import '../widgets/colors.dart';
@@ -250,14 +250,20 @@ class _HomePageState extends ConsumerState<HomePage> {
                                                     ),
                                                   )),
                                               Positioned(
-                                                top: screenSize.height * 0.018,
-                                                left: screenSize.width * 0.77,
+                                                top: screenSize.height * 0.019,
+                                                left: screenSize.width * 0.6,
                                                 child: CircleAvatar(
                                                     radius: 6,
                                                     backgroundColor:
                                                         getCircleColor(
                                                             isFasting,
                                                             latestEntry.value)),
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.015,
+                                                left: screenSize.width * 0.65,
+                                                child: getFastingText(
+                                                    latestEntry.value),
                                               ),
                                               Positioned(
                                                 top: MediaQuery.sizeOf(context)
@@ -402,14 +408,20 @@ class _HomePageState extends ConsumerState<HomePage> {
                                                     ),
                                                   )),
                                               Positioned(
-                                                top: screenSize.height * 0.018,
-                                                left: screenSize.width * 0.77,
+                                                top: screenSize.height * 0.019,
+                                                left: screenSize.width * 0.6,
                                                 child: CircleAvatar(
                                                   radius: 6,
                                                   backgroundColor:
                                                       getRandomCircleColor(
                                                           latestEntry.value),
                                                 ),
+                                              ),
+                                              Positioned(
+                                                top: screenSize.height * 0.015,
+                                                left: screenSize.width * 0.65,
+                                                child: getRandomText(
+                                                    latestEntry.value),
                                               ),
                                               Positioned(
                                                 top: MediaQuery.sizeOf(context)

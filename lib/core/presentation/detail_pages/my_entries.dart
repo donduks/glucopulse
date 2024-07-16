@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gluco_pulse3/core/widgets/colors.dart';
 
 // Learn about blood sugar
 Text header1 = Text(
@@ -208,14 +209,77 @@ Text tip3 = const Text(
     "Consider working with a registered dietitian to create a personalized meal plan.");
 
 // Roles of vitamins
+Text roleNote = const Text(
+    "Vitamins have a number of functions related to controlling and possibly reducing the consequences of diabetes. Below is a synopsis of the functions of important vitamins:");
 
+Text vDHeader = Text(
+  "1.Vitamin D:",
+  style: header3Stye,
+);
+Text vD = const Text(
+    "Helps regulate insulin sensitivity and glucose metabolism. Deficiency is linked to increased risk of insulin resistance and type 2 diabetes.");
+
+Text vB1Header = Text(
+  "2.Vitamin B1(Thiamine):",
+  style: header3Stye,
+);
+Text vB1 = const Text(
+    "Deficiency is common in diabetes and is associated with complications such as neuropathy and cardiovascular disease.");
+
+Text vB6Header = Text(
+  "3.Vitamin B6(Pyridoxine):",
+  style: header3Stye,
+);
+Text vB6 = const Text(
+    "Important for glucose tolerance and proper nerve function. Deficiency can lead to impaired glucose tolerance.");
+
+Text vB12Header = Text(
+  "4.Vitamin B12:",
+  style: header3Stye,
+);
+Text vB12 = const Text(
+    "Essential for nerve health and the production of red blood cells. Deficiency, particularly common in those taking metformin, can lead to neuropathy.");
+
+Text vCHeader = Text(
+  "5.Vitamin C:",
+  style: header3Stye,
+);
+
+Text vC = const Text(
+    "Acts as an antioxidant, reducing oxidative stress and inflammation, which are common in diabetes. It may also improve endothelial function and reduce blood sugar levels.");
+
+Text vEHeader = Text(
+  "6.Vitamin E:",
+  style: header3Stye,
+);
+
+Text vE = const Text(
+    "An antioxidant that can help protect cells from damage. It may improve insulin sensitivity and reduce the risk of cardiovascular disease in diabetes.");
+
+Text vKHeader = Text(
+  "7.Vitamin K:",
+  style: header3Stye,
+);
+Text vK = const Text(
+    "Plays a role in blood clotting and may improve insulin sensitivity and reduce the risk of cardiovascular complications.");
+
+Text biotinHeader = Text(
+  "8. Biotin:",
+  style: header3Stye,
+);
+
+Text biotin = const Text(
+    "Helps in the metabolism of carbohydrates, fats, and proteins. It may improve blood sugar control.");
+
+Text conclusion = const Text(
+    "Making sure you are getting enough of these vitamins from your diet or supplements can help you manage your diabetes and lower your risk of complications. Before beginning any new supplements, it is crucial to speak with a healthcare professional because some may have negative effects or interfere with prescription drugs.");
 // STYLEs
-TextStyle headerStyle = const TextStyle(
-    fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black);
-TextStyle header2Style = const TextStyle(
-    fontSize: 18, fontWeight: FontWeight.bold, color: Colors.brown);
+TextStyle headerStyle = TextStyle(
+    fontSize: 20, fontWeight: FontWeight.bold, color: kButtonsTextColor);
+TextStyle header2Style = TextStyle(
+    fontSize: 18, fontWeight: FontWeight.bold, color: kButtonsTextColor);
 
-TextStyle header3Stye = const TextStyle(
-    fontWeight: FontWeight.bold, fontSize: 15, color: Colors.brown);
-TextStyle header4Stye = const TextStyle(
-    fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black);
+TextStyle header3Stye = TextStyle(
+    fontWeight: FontWeight.bold, fontSize: 15, color: kButtonsTextColor);
+TextStyle header4Stye = TextStyle(
+    fontWeight: FontWeight.bold, fontSize: 15, color: kButtonsTextColor);
