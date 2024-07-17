@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gluco_pulse3/core/presentation/detail_pages/detail_page_header.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/my_entries.dart';
 import 'package:gluco_pulse3/core/widgets/colors.dart';
+import 'package:gluco_pulse3/core/widgets/text_style.dart';
 
 class LearnAboutBS extends StatelessWidget {
   const LearnAboutBS({super.key});
@@ -9,15 +11,21 @@ class LearnAboutBS extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Learn About Blood Sugar'),
-      ),
-      body: Center(
+      body: SafeArea(
         child: Column(
           children: [
+            DetailPageHeader(
+                text: Text(
+                  'Learn About Blood Sugar',
+                  style: infoCardStyle,
+                ),
+                image: const AssetImage('images/labs.jpg'),
+                onTap: () {
+                  Navigator.pop(context);
+                }),
             header1,
             Container(
-              height: screenSize.height * 0.8,
+              height: screenSize.height * 0.7,
               width: screenSize.width * 0.9,
               decoration: const BoxDecoration(),
               child: Padding(

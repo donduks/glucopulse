@@ -34,7 +34,7 @@ class NewCircle extends StatelessWidget {
           width: smallWidth,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: kButtonsColor,
+            color: kAppColor2,
           ),
         ),
       ],

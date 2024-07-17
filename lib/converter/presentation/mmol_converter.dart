@@ -77,7 +77,7 @@ class _MmolConverterState extends ConsumerState<MmolConverter>
               margin: EdgeInsets.only(left: screenSize.width * 0.05),
               width: screenSize.width * 0.9,
               height: screenSize.height * 0.05,
-              color: kButtonsColor,
+              color: kAppColor1,
               child: Row(
                 children: [
                   Text(
@@ -162,7 +162,7 @@ class _MmolConverterState extends ConsumerState<MmolConverter>
                       width: screenSize.width * 0.25,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: kButtonsColor,
+                          backgroundColor: kAppColor1,
                         ),
                         onPressed: () {
                           ref.read(numberProvider.notifier).onClearPressed();

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gluco_pulse3/core/presentation/detail_pages/detail_page_header.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/my_entries.dart';
+import 'package:gluco_pulse3/core/widgets/text_style.dart';
 
 class DietPlan extends StatelessWidget {
   const DietPlan({super.key});
@@ -8,12 +10,18 @@ class DietPlan extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Diet Plan'),
-      ),
-      body: Center(
+      body: SafeArea(
         child: Column(
           children: [
+            DetailPageHeader(
+                text: Text(
+                  'Diet Plan',
+                  style: infoCardStyle,
+                ),
+                image: const AssetImage('images/labs2.jpg'),
+                onTap: () {
+                  Navigator.pop(context);
+                }),
             Container(
               height: screenSize.height * 0.8,
               width: screenSize.width * 0.9,

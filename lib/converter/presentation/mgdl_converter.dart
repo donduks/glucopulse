@@ -69,7 +69,7 @@ class _MgdlConverterState extends ConsumerState<MgdlConverter>
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: kButtonsColor,
+                    color: kAppColor1,
                   ),
                 ),
               ),
@@ -78,7 +78,7 @@ class _MgdlConverterState extends ConsumerState<MgdlConverter>
               margin: EdgeInsets.only(left: screenSize.width * 0.05),
               width: screenSize.width * 0.9,
               height: screenSize.height * 0.05,
-              color: kButtonsColor,
+              color: kAppColor1,
               child: Row(
                 children: [
                   Text(
@@ -161,7 +161,7 @@ class _MgdlConverterState extends ConsumerState<MgdlConverter>
                       width: screenSize.width * 0.25,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: kButtonsColor,
+                          backgroundColor: kAppColor1,
                         ),
                         onPressed: () {
                           ref.read(numberProvider.notifier).onClearPressed();

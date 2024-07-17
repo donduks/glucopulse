@@ -64,7 +64,7 @@ class _AppDataStoragePageState extends ConsumerState<AppDataStoragePage> {
                   child: CircleAvatar(
                     radius: 30,
                     backgroundImage: const AssetImage('images/beat.gif'),
-                    backgroundColor: kButtonsColor,
+                    backgroundColor: kAppColor1,
                   ),
                 ),
               ],

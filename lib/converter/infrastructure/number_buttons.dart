@@ -20,7 +20,7 @@ class NumberButtons extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width * 0.25,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: kButtonsColor,
+          backgroundColor: kAppColor1,
         ),
         onPressed: () =>
             ref.read(numberProvider.notifier).onNumberPressed(number),

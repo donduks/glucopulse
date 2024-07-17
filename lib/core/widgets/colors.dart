@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-Color kButtonsColor = const Color.fromRGBO(205, 232, 252, 1);
-Color kDarkButtonsColor = const Color.fromRGBO(88, 155, 206, 1);
+Color kAppColor1 = const Color.fromRGBO(246, 251, 255, 1);
+Color kAppColor2 = const Color.fromRGBO(205, 232, 254, 1);
 Color kButtonsTextColor = const Color.fromRGBO(52, 72, 130, 1);
 Color kTextFieldFillColor = const Color.fromRGBO(232, 240, 247, 1);
 Color kConvertButtonsColor = const Color.fromRGBO(0, 214, 98, 1);

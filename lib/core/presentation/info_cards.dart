@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/diet_plan.dart';
+import 'package:gluco_pulse3/core/presentation/detail_pages/hypoglycemia.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/learn_about_bs.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/role_of_vitamin.dart';
 import 'package:gluco_pulse3/core/widgets/info_box.dart';
@@ -60,7 +61,12 @@ class InfoCards extends StatelessWidget {
                 'Hypoglycemia',
                 style: infoCardStyle,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Hypoglycemia()));
+              },
             ),
             SizedBox(height: screenSize.height * 0.012),
             InfoBox(

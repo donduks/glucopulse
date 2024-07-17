@@ -22,7 +22,7 @@ class Rectangle extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.22,
             width: MediaQuery.sizeOf(context).width * 0.8,
             decoration: BoxDecoration(
-                color: kButtonsColor,
+                color: kAppColor2,
                 borderRadius: const BorderRadius.all(Radius.circular(30))),
           ),
         ),
@@ -30,9 +30,9 @@ class Rectangle extends StatelessWidget {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.2,
             width: MediaQuery.sizeOf(context).width * 0.8,
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(30))),
+            decoration: BoxDecoration(
+                color: kAppColor1,
+                borderRadius: const BorderRadius.all(Radius.circular(30))),
           ),
         ),
       ],
