@@ -13,15 +13,18 @@ class RoleOfVitamin extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            DetailPageHeader(
-                text: Text(
-                  'Role of Vitamin in Diabetes',
-                  style: infoCardStyle,
-                ),
-                image: const AssetImage('images/control.jpg'),
-                onTap: () {
-                  Navigator.pop(context);
-                }),
+            Hero(
+              tag: 'role',
+              child: DetailPageHeader(
+                  text: Text(
+                    'Role of Vitamin in Diabetes',
+                    style: infoCardStyle,
+                  ),
+                  image: const AssetImage('images/control.jpg'),
+                  onTap: () {
+                    Navigator.pop(context);
+                  }),
+            ),
             Center(
               child: SizedBox(
                 height: screenSize.height * 0.8,

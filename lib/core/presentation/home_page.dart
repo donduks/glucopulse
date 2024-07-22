@@ -6,6 +6,7 @@ import 'package:gluco_pulse3/core/widgets/rectangles.dart';
 import 'package:gluco_pulse3/core/presentation/graph_page.dart';
 import 'package:gluco_pulse3/core/presentation/info_cards.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../data_storage/aplication/box_data.dart';
 import '../../data_storage/aplication/box_data2.dart';
@@ -41,6 +42,10 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final box = Hive.box<BloodSugarEntry>('bloodSugarData');
+    final box2 = Hive.box<BloodSugarEntry2>('bloodSugarData2');
+    final average = myBox.getAverage();
+    final average2 = myBox2.getAverage();
     final name = ref.watch(nameProvider);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
@@ -529,7 +534,229 @@ class _HomePageState extends ConsumerState<HomePage> {
                     screenSize: screenSize,
                     height: screenSize.height * 0.03,
                     width: screenSize.width * 0.3,
-                    onTap: () {},
+                    onTap: isFasting
+                        ? () {
+                            showModalBottomSheet(
+                                backgroundColor: kAppColor2,
+                                context: context,
+                                builder: (context) {
+                                  return SingleChildScrollView(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          height: screenSize.height * 0.03,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: screenSize.width * 0.08),
+                                          child: Text(
+                                            'Average Blood Sugar: ${average.toStringAsFixed(2)} mmol',
+                                            style: TextStyle(
+                                                color: kButtonsTextColor,
+                                                fontSize:
+                                                    screenSize.width * 0.035),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8.0),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Table(
+                                            border: TableBorder.all(),
+                                            columnWidths: const {
+                                              0: FlexColumnWidth(2),
+                                              1: FlexColumnWidth(3),
+                                            },
+                                            children: [
+                                              TableRow(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            16.0),
+                                                    child: Text(
+                                                      'Fasting Blood Sugar Data',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color:
+                                                            kButtonsTextColor,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            16.0),
+                                                    child: Text(
+                                                      'Date and Time',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color:
+                                                            kButtonsTextColor,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              ...box.values.map(
+                                                (entry) {
+                                                  return TableRow(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8.0),
+                                                        child: Text(
+                                                            '${entry.value.toString()} mmol'),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8.0),
+                                                        child: Text(entry
+                                                            .dateTime
+                                                            .toString()),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        TextButton(
+                                            onPressed: () {
+                                              final data = box.values
+                                                  .map((entry) =>
+                                                      'Blood Sugar: ${entry.value} mmol, Date: ${entry.dateTime}')
+                                                  .join('\n');
+                                              Share.share(data);
+                                            },
+                                            child: Text(
+                                              'Click to Share Data',
+                                              style: TextStyle(
+                                                color: kButtonsTextColor,
+                                              ),
+                                            )),
+                                      ],
+                                    ),
+                                  );
+                                });
+                          }
+                        : () {
+                            showModalBottomSheet(
+                                backgroundColor: kAppColor2,
+                                context: context,
+                                builder: (context) {
+                                  return SingleChildScrollView(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          height: screenSize.height * 0.03,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: screenSize.width * 0.08),
+                                          child: Text(
+                                            'Average Blood Sugar: ${average2.toStringAsFixed(2)} mmol',
+                                            style: TextStyle(
+                                                color: kButtonsTextColor,
+                                                fontSize:
+                                                    screenSize.width * 0.035),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 8.0),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Table(
+                                            border: TableBorder.all(),
+                                            columnWidths: const {
+                                              0: FlexColumnWidth(2),
+                                              1: FlexColumnWidth(3),
+                                            },
+                                            children: [
+                                              TableRow(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            16.0),
+                                                    child: Text(
+                                                      'Random Blood Sugar Data',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color:
+                                                            kButtonsTextColor,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            16.0),
+                                                    child: Text(
+                                                      'Date and Time',
+                                                      style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color:
+                                                            kButtonsTextColor,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              ...box2.values.map(
+                                                (entry) {
+                                                  return TableRow(
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8.0),
+                                                        child: Text(
+                                                            '${entry.value.toString()} mmol'),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8.0),
+                                                        child: Text(entry
+                                                            .dateTime
+                                                            .toString()),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        TextButton(
+                                            onPressed: () {
+                                              final data = box2.values
+                                                  .map((entry) =>
+                                                      'Blood Sugar: ${entry.value} mmol, Date: ${entry.dateTime}')
+                                                  .join('\n');
+                                              Share.share(data);
+                                            },
+                                            child: Text(
+                                              'Click to Share Data',
+                                              style: TextStyle(
+                                                color: kButtonsTextColor,
+                                              ),
+                                            )),
+                                      ],
+                                    ),
+                                  );
+                                });
+                          },
                     text: const Text('All Records'),
                     color: kTextFieldFillColor,
                     offset: const Offset(0, 3),

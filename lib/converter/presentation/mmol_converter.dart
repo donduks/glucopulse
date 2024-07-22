@@ -61,7 +61,7 @@ class _MmolConverterState extends ConsumerState<MmolConverter>
               margin: EdgeInsets.only(left: screenSize.width * 0.05),
               width: screenSize.width * 0.9,
               height: screenSize.height * 0.1,
-              color: kTextFieldFillColor,
+              color: kAppColor2,
               child: Center(
                 child: Text(
                   inputText,

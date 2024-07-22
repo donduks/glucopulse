@@ -14,15 +14,18 @@ class LearnAboutBS extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            DetailPageHeader(
-                text: Text(
-                  'Learn About Blood Sugar',
-                  style: infoCardStyle,
-                ),
-                image: const AssetImage('images/labs.jpg'),
-                onTap: () {
-                  Navigator.pop(context);
-                }),
+            Hero(
+              tag: 'learn',
+              child: DetailPageHeader(
+                  text: Text(
+                    'Learn About Blood Sugar',
+                    style: infoCardStyle,
+                  ),
+                  image: const AssetImage('images/labs.jpg'),
+                  onTap: () {
+                    Navigator.pop(context);
+                  }),
+            ),
             header1,
             Container(
               height: screenSize.height * 0.7,

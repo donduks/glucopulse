@@ -62,14 +62,14 @@ class _MgdlConverterState extends ConsumerState<MgdlConverter>
               margin: EdgeInsets.only(left: screenSize.width * 0.05),
               width: screenSize.width * 0.9,
               height: screenSize.height * 0.1,
-              color: kTextFieldFillColor,
+              color: kAppColor2,
               child: Center(
                 child: Text(
                   inputText,
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: kAppColor1,
+                    color: kButtonsTextColor,
                   ),
                 ),
               ),

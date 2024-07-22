@@ -18,55 +18,69 @@ class InfoCards extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            InfoBox(
-              image: const AssetImage('images/labs.jpg'),
-              text: Text('Learn about Blood Sugar', style: infoCardStyle),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LearnAboutBS()));
-              },
+            Hero(
+              tag: 'learn',
+              child: InfoBox(
+                image: const AssetImage('images/labs.jpg'),
+                text: Text('Learn about Blood Sugar', style: infoCardStyle),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LearnAboutBS()));
+                },
+              ),
             ),
             SizedBox(height: screenSize.height * 0.012),
-            InfoBox(
-              image: const AssetImage('images/labs2.jpg'),
-              text: Text(
-                'Diet Plan',
-                style: infoCardStyle,
+            Hero(
+              tag: 'diet',
+              child: InfoBox(
+                image: const AssetImage('images/labs2.jpg'),
+                text: Text(
+                  'Diet Plan',
+                  style: infoCardStyle,
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DietPlan()));
+                },
               ),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const DietPlan()));
-              },
             ),
             SizedBox(height: screenSize.height * 0.012),
-            InfoBox(
-              image: const AssetImage('images/control.jpg'),
-              text: Text(
-                'Role of Vitamins Diabetes',
-                style: infoCardStyle,
+            Hero(
+              tag: 'role',
+              child: InfoBox(
+                image: const AssetImage('images/control.jpg'),
+                text: Text(
+                  'Role of Vitamins Diabetes',
+                  style: infoCardStyle,
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RoleOfVitamin()));
+                },
               ),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const RoleOfVitamin()));
-              },
             ),
             SizedBox(height: screenSize.height * 0.012),
-            InfoBox(
-              image: const AssetImage('images/hyper.jpg'),
-              text: Text(
-                'Hypoglycemia',
-                style: infoCardStyle,
+            Hero(
+              tag: 'hypo',
+              child: InfoBox(
+                image: const AssetImage('images/hyper.jpg'),
+                text: Text(
+                  'Hypoglycemia',
+                  style: infoCardStyle,
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Hypoglycemia()));
+                },
               ),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Hypoglycemia()));
-              },
             ),
             SizedBox(height: screenSize.height * 0.012),
             InfoBox(

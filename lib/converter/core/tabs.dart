@@ -18,7 +18,7 @@ class Tabs extends ConsumerWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: kTextFieldFillColor,
+          backgroundColor: kAppColor1,
           title: Text(
             'Hello $name',
             style: TextStyle(

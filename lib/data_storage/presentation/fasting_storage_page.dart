@@ -55,7 +55,7 @@ class _FastingDataPageState extends ConsumerState<FastingDataPage> {
                           child: Container(
                             height: MediaQuery.sizeOf(context).height * 0.125,
                             decoration: BoxDecoration(
-                              color: kTextFieldFillColor,
+                              color: kAppColor1,
                               borderRadius: BorderRadius.circular(50),
                               boxShadow: [
                                 BoxShadow(

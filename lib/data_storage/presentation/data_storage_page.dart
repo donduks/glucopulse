@@ -35,7 +35,7 @@ class _AppDataStoragePageState extends ConsumerState<AppDataStoragePage> {
             width: MediaQuery.sizeOf(context).width,
             height: screenSize.height * 0.15,
             decoration: BoxDecoration(
-              color: kTextFieldFillColor,
+              color: kAppColor1,
               boxShadow: const [
                 BoxShadow(
                   offset: Offset(5, 0),
@@ -82,11 +82,13 @@ class _AppDataStoragePageState extends ConsumerState<AppDataStoragePage> {
                     isRandom = false;
                   });
                 },
-                text: const Text(
+                text: Text(
                   'Fasting',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color: isFasting ? Colors.black : Colors.white,
+                  ),
                 ),
-                color: isFasting ? Colors.blue : Colors.grey,
+                color: isFasting ? kAppColor1 : kAppColor2,
                 offset: isFasting ? const Offset(0, 3) : const Offset(0, 0),
               ),
               SizedBox(
@@ -102,11 +104,13 @@ class _AppDataStoragePageState extends ConsumerState<AppDataStoragePage> {
                     isFasting = false;
                   });
                 },
-                text: const Text(
+                text: Text(
                   'Random',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color: isRandom ? Colors.black : Colors.white,
+                  ),
                 ),
-                color: isRandom ? Colors.blue : Colors.grey,
+                color: isRandom ? kAppColor1 : kAppColor2,
                 offset: isRandom ? const Offset(0, 3) : const Offset(0, 0),
               ),
             ],

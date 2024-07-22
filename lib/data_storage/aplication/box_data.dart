@@ -17,4 +17,10 @@ class BoxData {
   BloodSugarEntry? get(double key) {
     return box.get(key);
   }
+
+  double getAverage() {
+    if (box.isEmpty) return 0;
+    final total = box.values.fold<double>(0, (sum, entry) => sum + entry.value);
+    return total / box.length;
+  }
 }

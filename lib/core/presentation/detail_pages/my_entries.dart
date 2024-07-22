@@ -273,6 +273,56 @@ Text biotin = const Text(
 
 Text conclusion = const Text(
     "Making sure you are getting enough of these vitamins from your diet or supplements can help you manage your diabetes and lower your risk of complications. Before beginning any new supplements, it is crucial to speak with a healthcare professional because some may have negative effects or interfere with prescription drugs.");
+Text hypoIntro = const Text(
+    "Hypoglycemia refers to an abnormally low level of blood sugar (glucose), which is the body's main energy source. For people with diabetes, managing blood sugar levels is crucial, and hypoglycemia can be a dangerous side effect of diabetes treatment.");
+Text causesOfHypo = Text(
+  "Causes of Hypoglycemia in Diabetic Persons",
+  style: header3Stye,
+);
+Text one = const Text(
+    "1. Medication: Taking too much insulin or diabetes medication that increases insulin levels can cause blood sugar to drop too low.");
+Text two = const Text(
+    "2. Diet: Skipping meals, eating less than usual, or eating later than usual can lead to low blood sugar.");
+Text three = const Text(
+    "3. Exercise: Increased physical activity can lower blood sugar levels, especially if insulin or medications are not adjusted accordingly.");
+Text four = const Text(
+    "4. Alcohol: Drinking alcohol, especially on an empty stomach, can cause hypoglycemia.");
+Text five = const Text(
+    "5. Illness: Certain illnesses or conditions can affect blood sugar levels.");
+Text effectOfHypo = Text(
+  "Effects of Hypoglycemia",
+  style: headerStyle,
+);
+Text mildHypo = Text(
+  "Mild Hypoglycemia:",
+  style: header2Style,
+);
+Text effect1 = const Text("Shaking");
+Text effect2 = const Text("Sweating");
+Text effect3 = const Text("Rapid Heartbeat");
+Text effect4 = const Text("Hunger");
+Text effect5 = const Text("Anxiety");
+Text effect6 = const Text("Dizziness");
+Text effect7 = const Text("Irritability");
+
+Text moderateHypo = Text(
+  "Moderate Hypoglycemia:",
+  style: header2Style,
+);
+Text effect11 = const Text("Difficulty Concentrating");
+Text effect22 = const Text("Confusion");
+Text effect33 = const Text("Weakness");
+Text effect44 = const Text("Blurred Vision");
+Text effect55 = const Text("Slurred Speech");
+
+Text severeHypo = Text(
+  "Severe Hypoglycemia:",
+  style: header2Style,
+);
+Text effect111 = const Text("Seizures");
+Text effect222 = const Text("Loss of Consciousness");
+Text effect333 = const Text("Coma");
+
 // STYLEs
 TextStyle headerStyle = TextStyle(
     fontSize: 20, fontWeight: FontWeight.bold, color: kButtonsTextColor);

@@ -13,15 +13,18 @@ class DietPlan extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            DetailPageHeader(
-                text: Text(
-                  'Diet Plan',
-                  style: infoCardStyle,
-                ),
-                image: const AssetImage('images/labs2.jpg'),
-                onTap: () {
-                  Navigator.pop(context);
-                }),
+            Hero(
+              tag: 'diet',
+              child: DetailPageHeader(
+                  text: Text(
+                    'Diet Plan',
+                    style: infoCardStyle,
+                  ),
+                  image: const AssetImage('images/labs2.jpg'),
+                  onTap: () {
+                    Navigator.pop(context);
+                  }),
+            ),
             Container(
               height: screenSize.height * 0.8,
               width: screenSize.width * 0.9,
