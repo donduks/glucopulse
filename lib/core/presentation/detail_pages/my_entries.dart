@@ -399,6 +399,38 @@ Text howTo51 = const Text(
     "Healthy Weight: Achieve and maintain a healthy weight through diet and exercise.");
 Text howTo52 = const Text(
     "Professional Guidance: Seek support from a dietitian or weight loss program if needed.");
+Text howTo6 = Text(
+  "6. Stress Management",
+  style: header2Style,
+);
+Text howTo61 = const Text(
+    "Reduce Stress: Practice stress-reducing techniques like yoga, meditation, or deep breathing exercises.");
+Text howTo62 =
+    const Text("Healthy Sleep: Ensure you get enough sleep each night.");
+Text howTo7 = Text(
+  "7. Avoid Tobacco and Limit Alcohol",
+  style: header2Style,
+);
+Text howTo71 = const Text(
+    "Quit Smoking: Smoking increases the risk of diabetes complications.");
+Text howTo72 = const Text(
+    "Limit Alcohol: Drink alcohol in moderation, as it can affect blood sugar levels.");
+Text howTo8 = Text(
+  "8. Regular Medical Check-ups",
+  style: header2Style,
+);
+Text howTo81 = const Text(
+    "Routine Exams: Regularly visit your healthcare provider to monitor for complications and manage your overall health.");
+Text howTo82 = const Text(
+    "Specialist Care: See specialists like endocrinologists, ophthalmologists, and podiatrists as recommended.");
+Text howTo9 = Text(
+  "9. Education and Support",
+  style: header2Style,
+);
+Text howTo91 = const Text(
+    "Learn About Diabetes: Educate yourself about diabetes management through classes, books, or online resources.");
+Text howTo92 = const Text(
+    "Support Groups: Join diabetes support groups to share experiences and get encouragement.");
 
 // STYLEs
 TextStyle headerStyle = TextStyle(

@@ -285,9 +285,181 @@ class HowToControlDiabetes extends StatelessWidget {
                         width: screenSize.width * 0.06,
                       ),
                       SizedBox(
-                        height: screenSize.height * 0.08,
+                        height: screenSize.height * 0.12,
                         width: screenSize.width * 0.7,
                         child: howTo52,
+                      ),
+                    ],
+                  ),
+                  howTo6,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: screenSize.height * 0.01),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.06,
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.1,
+                        width: screenSize.width * 0.7,
+                        child: howTo61,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: screenSize.height * 0.01),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.06,
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.1,
+                        width: screenSize.width * 0.7,
+                        child: howTo62,
+                      ),
+                    ],
+                  ),
+                  howTo7,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: screenSize.height * 0.01),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.06,
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.07,
+                        width: screenSize.width * 0.7,
+                        child: howTo71,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: screenSize.height * 0.01),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.06,
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.1,
+                        width: screenSize.width * 0.7,
+                        child: howTo72,
+                      ),
+                    ],
+                  ),
+                  howTo8,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: screenSize.height * 0.01),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.06,
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.12,
+                        width: screenSize.width * 0.7,
+                        child: howTo81,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: screenSize.height * 0.01),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.06,
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.12,
+                        width: screenSize.width * 0.7,
+                        child: howTo82,
+                      ),
+                    ],
+                  ),
+                  howTo9,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: screenSize.height * 0.01),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.06,
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.1,
+                        width: screenSize.width * 0.7,
+                        child: howTo91,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: screenSize.height * 0.01),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.06,
+                      ),
+                      SizedBox(
+                        height: screenSize.height * 0.15,
+                        width: screenSize.width * 0.7,
+                        child: howTo22,
                       ),
                     ],
                   ),
