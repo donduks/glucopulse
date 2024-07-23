@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gluco_pulse3/core/presentation/detail_pages/detail_page_header.dart';
-import 'package:gluco_pulse3/core/presentation/detail_pages/my_entries.dart';
-import 'package:gluco_pulse3/core/widgets/text_style.dart';
+import 'package:gluco_pulse3/home_page/presentation/detail_pages/detail_page_header.dart';
+import 'package:gluco_pulse3/home_page/presentation/detail_pages/my_entries.dart';
+import 'package:gluco_pulse3/home_page/widgets/text_style.dart';
 
 class RoleOfVitamin extends StatelessWidget {
   const RoleOfVitamin({super.key});

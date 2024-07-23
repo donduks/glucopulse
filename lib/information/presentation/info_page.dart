@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gluco_pulse3/core/presentation/theme.dart';
+import 'package:gluco_pulse3/home_page/presentation/theme.dart';
 
-import '../../core/shared/providers.dart';
+import '../../home_page/shared/providers.dart';
 
 class InfoPage extends ConsumerStatefulWidget {
   const InfoPage({super.key});

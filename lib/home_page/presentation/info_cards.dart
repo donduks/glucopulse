@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:gluco_pulse3/core/presentation/detail_pages/diet_plan.dart';
-import 'package:gluco_pulse3/core/presentation/detail_pages/how_to_control_diabetes.dart';
-import 'package:gluco_pulse3/core/presentation/detail_pages/hypoglycemia.dart';
-import 'package:gluco_pulse3/core/presentation/detail_pages/learn_about_bs.dart';
-import 'package:gluco_pulse3/core/presentation/detail_pages/role_of_vitamin.dart';
-import 'package:gluco_pulse3/core/widgets/info_box.dart';
-import 'package:gluco_pulse3/core/widgets/text_style.dart';
+import 'package:gluco_pulse3/home_page/presentation/detail_pages/diet_plan.dart';
+import 'package:gluco_pulse3/home_page/presentation/detail_pages/how_to_control_diabetes.dart';
+import 'package:gluco_pulse3/home_page/presentation/detail_pages/hypoglycemia.dart';
+import 'package:gluco_pulse3/home_page/presentation/detail_pages/learn_about_bs.dart';
+import 'package:gluco_pulse3/home_page/presentation/detail_pages/role_of_vitamin.dart';
+import 'package:gluco_pulse3/home_page/widgets/info_box.dart';
+import 'package:gluco_pulse3/home_page/widgets/text_style.dart';
 
 class InfoCards extends StatelessWidget {
   const InfoCards({super.key});

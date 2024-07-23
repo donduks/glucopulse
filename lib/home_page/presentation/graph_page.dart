@@ -1,7 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:gluco_pulse3/core/infrastructure/sugar_measurement_color.dart';
-import 'package:gluco_pulse3/core/widgets/colors.dart';
+import 'package:gluco_pulse3/home_page/infrastructure/sugar_measurement_color.dart';
+import 'package:gluco_pulse3/home_page/widgets/colors.dart';
 import 'package:gluco_pulse3/data_storage/domain/blood_sugar_entry.dart';
 import 'package:hive_flutter/adapters.dart';
 

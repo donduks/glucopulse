@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gluco_pulse3/core/infrastructure/sugar_measurement_color.dart';
+import 'package:gluco_pulse3/home_page/infrastructure/sugar_measurement_color.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../../core/widgets/circles.dart';
-import '../../core/widgets/colors.dart';
+import '../../home_page/widgets/circles.dart';
+import '../../home_page/widgets/colors.dart';
 import '../aplication/box_data2.dart';
 import '../domain/blood_sugar_entry2.dart';
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gluco_pulse3/core/presentation/graph_page_random.dart';
-import 'package:gluco_pulse3/core/shared/providers.dart';
-import 'package:gluco_pulse3/core/widgets/rectangles.dart';
-import 'package:gluco_pulse3/core/presentation/graph_page.dart';
-import 'package:gluco_pulse3/core/presentation/info_cards.dart';
+import 'package:gluco_pulse3/home_page/presentation/graph_page_random.dart';
+import 'package:gluco_pulse3/home_page/shared/providers.dart';
+import 'package:gluco_pulse3/home_page/widgets/rectangles.dart';
+import 'package:gluco_pulse3/home_page/presentation/graph_page.dart';
+import 'package:gluco_pulse3/home_page/presentation/info_cards.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -537,7 +537,6 @@ class _HomePageState extends ConsumerState<HomePage> {
                     onTap: isFasting
                         ? () {
                             showModalBottomSheet(
-                                backgroundColor: kAppColor2,
                                 context: context,
                                 builder: (context) {
                                   return SingleChildScrollView(
@@ -648,7 +647,6 @@ class _HomePageState extends ConsumerState<HomePage> {
                           }
                         : () {
                             showModalBottomSheet(
-                                backgroundColor: kAppColor2,
                                 context: context,
                                 builder: (context) {
                                   return SingleChildScrollView(

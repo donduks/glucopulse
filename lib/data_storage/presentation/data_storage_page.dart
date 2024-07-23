@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gluco_pulse3/data_storage/presentation/fasting_storage_page.dart';
 import 'package:gluco_pulse3/data_storage/presentation/random_storage_page.dart';
 
-import '../../core/shared/providers.dart';
-import '../../core/widgets/buttons.dart';
-import '../../core/widgets/colors.dart';
+import '../../home_page/shared/providers.dart';
+import '../../home_page/widgets/buttons.dart';
+import '../../home_page/widgets/colors.dart';
 
 class AppDataStoragePage extends ConsumerStatefulWidget {
   const AppDataStoragePage({super.key});

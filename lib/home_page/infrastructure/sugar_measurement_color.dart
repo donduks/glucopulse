@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gluco_pulse3/core/widgets/sugar_measurement_text.dart';
+import 'package:gluco_pulse3/home_page/widgets/sugar_measurement_text.dart';
 
 import '../widgets/colors.dart';
 

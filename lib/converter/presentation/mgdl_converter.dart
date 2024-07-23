@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gluco_pulse3/core/widgets/colors.dart';
+import 'package:gluco_pulse3/home_page/widgets/colors.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../core/shared/providers.dart';
+import '../../home_page/shared/providers.dart';
 import '../infrastructure/number_buttons.dart';
 
 class MgdlConverter extends ConsumerStatefulWidget {
