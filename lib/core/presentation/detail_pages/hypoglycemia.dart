@@ -266,6 +266,42 @@ class Hypoglycemia extends StatelessWidget {
                         effect333,
                       ],
                     ),
+                    note,
+                    SizedBox(
+                      height: screenSize.height * 0.02,
+                    ),
+                    preventionOfHypo,
+                    SizedBox(
+                      height: screenSize.height * 0.006,
+                    ),
+                    prevention1,
+                    SizedBox(
+                      height: screenSize.height * 0.02,
+                    ),
+                    prevention2,
+                    SizedBox(
+                      height: screenSize.height * 0.02,
+                    ),
+                    prevention3,
+                    SizedBox(
+                      height: screenSize.height * 0.02,
+                    ),
+                    prevention4,
+                    SizedBox(
+                      height: screenSize.height * 0.02,
+                    ),
+                    prevention5,
+                    SizedBox(
+                      height: screenSize.height * 0.02,
+                    ),
+                    prevention6,
+                    SizedBox(
+                      height: screenSize.height * 0.02,
+                    ),
+                    prevention7,
+                    SizedBox(
+                      height: screenSize.height * 0.02,
+                    ),
                   ],
                 ),
               ),

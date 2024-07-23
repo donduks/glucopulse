@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/diet_plan.dart';
+import 'package:gluco_pulse3/core/presentation/detail_pages/how_to_control_diabetes.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/hypoglycemia.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/learn_about_bs.dart';
 import 'package:gluco_pulse3/core/presentation/detail_pages/role_of_vitamin.dart';
@@ -83,13 +84,21 @@ class InfoCards extends StatelessWidget {
               ),
             ),
             SizedBox(height: screenSize.height * 0.012),
-            InfoBox(
-              image: const AssetImage('images/workout.jpg'),
-              text: Text(
-                'How to Control Diabetes',
-                style: infoCardStyle,
+            Hero(
+              tag: 'how',
+              child: InfoBox(
+                image: const AssetImage('images/howtoc.jpg'),
+                text: Text(
+                  'How to Control Diabetes',
+                  style: infoCardStyle,
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HowToControlDiabetes()));
+                },
               ),
-              onTap: () {},
             ),
             SizedBox(height: screenSize.height * 0.08),
           ],

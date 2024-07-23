@@ -289,6 +289,7 @@ Text four = const Text(
     "4. Alcohol: Drinking alcohol, especially on an empty stomach, can cause hypoglycemia.");
 Text five = const Text(
     "5. Illness: Certain illnesses or conditions can affect blood sugar levels.");
+
 Text effectOfHypo = Text(
   "Effects of Hypoglycemia",
   style: headerStyle,
@@ -322,6 +323,82 @@ Text severeHypo = Text(
 Text effect111 = const Text("Seizures");
 Text effect222 = const Text("Loss of Consciousness");
 Text effect333 = const Text("Coma");
+Text note = const Text(
+    "If left untreated, severe hypoglycemia can be life-threatening.");
+
+Text preventionOfHypo = Text(
+  "Prevention of Hypoglycemia",
+  style: headerStyle,
+);
+Text prevention1 = const Text(
+    "1. Monitor Blood Sugar Levels: Regularly check your blood sugar levels as advised by your healthcare provider.");
+Text prevention2 = const Text(
+    "2. Balanced Diet: Eat regular meals and snacks. Include a balance of carbohydrates, proteins, and fats.");
+Text prevention3 = const Text(
+    "3. Medication Management: Follow your healthcare provider's instructions regarding medication dosages. Be cautious with insulin or other medications that affect blood sugar.");
+Text prevention4 = const Text(
+    "4. Adjust for Activity: Adjust food intake or medication when planning for increased physical activity.");
+Text prevention5 = const Text(
+    "5. Avoid Excess Alcohol: Limit alcohol consumption and never drink on an empty stomach.");
+Text prevention6 = const Text(
+    "6. Carry Snacks: Always have a quick source of sugar, such as glucose tablets, fruit juice, or candy, available in case of low blood sugar.");
+Text prevention7 = const Text(
+    "7. Educate Family and Friends: Ensure that those around you know how to recognize and treat hypoglycemia.");
+Text hypoConclusion = const Text(
+    "By following these guidelines, people with diabetes can better manage their blood sugar levels and reduce the risk of hypoglycemia.");
+
+// How to control diabetes
+
+Text howToIntro = const Text(
+    "Controlling diabetes involves a combination of lifestyle changes, medication, and regular monitoring. Here are key strategies to manage diabetes effectively:");
+Text howTo1 = Text(
+  "1. Diet and Nutrition",
+  style: header2Style,
+);
+Text howTo11 = const Text(
+    "Balanced Diet: Focus on eating a variety of healthy foods, including vegetables, fruits, whole grains, lean proteins, and healthy fats.");
+Text howTo12 = const Text(
+    "Carbohydrate Management: Monitor carbohydrate intake to avoid spikes in blood sugar levels. Prefer complex carbs over simple sugars.");
+Text howTo13 = const Text(
+    "Portion Control: Be mindful of portion sizes to avoid overeating.");
+Text howTo14 = const Text(
+    "Consistent Meal Times: Eat meals and snacks at regular times each day.");
+
+Text howTo2 = Text(
+  "2. Physical Activity",
+  style: header2Style,
+);
+Text howTo21 = const Text(
+    "Regular Exercise: Aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity each week, plus muscle-strengthening activities on 2 or more days a week.");
+Text howTo22 = const Text(
+    "Stay Active: Incorporate physical activity into daily routines, like walking or cycling.");
+
+Text howTo3 = Text(
+  "3. Medication",
+  style: header2Style,
+);
+Text howTo31 = const Text(
+    "Follow Prescriptions: Take medications as prescribed by your healthcare provider. This may include insulin or oral medications.");
+Text howTo32 = const Text(
+    "Regular Check-ups: Regularly consult with your healthcare provider to adjust medications as needed.");
+
+Text howTo4 = Text(
+  "4. Monitoring Blood Sugar Levels",
+  style: header2Style,
+);
+Text howTo41 = const Text(
+    "Regular Testing: Monitor blood sugar levels as recommended by your healthcare provider to understand how your body responds to different activities and foods.");
+Text howTo42 = const Text(
+    "Use Technology: Consider using continuous glucose monitors (CGMs) for real-time blood sugar tracking.");
+
+Text howTo5 = Text(
+  "5. Weight Management",
+  style: header2Style,
+);
+Text howTo51 = const Text(
+    "Healthy Weight: Achieve and maintain a healthy weight through diet and exercise.");
+Text howTo52 = const Text(
+    "Professional Guidance: Seek support from a dietitian or weight loss program if needed.");
 
 // STYLEs
 TextStyle headerStyle = TextStyle(
