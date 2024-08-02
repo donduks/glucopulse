@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gluco_pulse3/home_page/presentation/theme.dart';
 
 import '../../home_page/shared/providers.dart';
 
@@ -22,44 +21,45 @@ class _InfoPageState extends ConsumerState<InfoPage> {
         title: Text('Welcome $name'),
         actions: [
           TextButton(
-              onPressed: () {
-                showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: const Text('Your User Name'),
-                        content: TextField(
-                          controller: nameController,
-                        ),
-                        actions: [
-                          TextButton(
-                              onPressed: () {
-                                ref
-                                    .read(nameProvider.notifier)
-                                    .addName(nameController.text);
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: const Text('Your User Name'),
+                      content: TextField(
+                        controller: nameController,
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              ref
+                                  .read(nameProvider.notifier)
+                                  .addName(nameController.text);
 
-                                Navigator.pop(context);
-                                nameController.clear();
-                              },
-                              child: const Text('Save'))
-                        ],
-                      );
-                    });
-              },
-              child: const Text('click to enter name'))
+                              Navigator.pop(context);
+                              nameController.clear();
+                            },
+                            child: const Text('Save'))
+                      ],
+                    );
+                  });
+            },
+            child: const Text('click to enter name'),
+          ),
         ],
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: Column(
           children: [
-            TextButton(
+            /* TextButton(
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const AppThemePage()));
                 },
-                child: const Text('Switch Theme'))
+                child: const Text('Switch Theme')) */
           ],
         ),
       ),

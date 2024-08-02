@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gluco_pulse3/information/presentation/info_page.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import '../../about/about_page.dart';
 import '../../converter/core/tabs.dart';
 import '../../data_storage/presentation/data_storage_page.dart';
 import '../presentation/home_page.dart';
@@ -19,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const HomePage(),
     const Tabs(),
     const AppDataStoragePage(),
-    const InfoPage(),
+    const AboutPage(),
   ];
 
   @override
