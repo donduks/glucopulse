@@ -6,7 +6,7 @@ import 'package:gluco_pulse3/home_page/widgets/colors.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../aplication/box_data.dart';
+import '../infrastructure/box_data.dart';
 import '../domain/blood_sugar_entry.dart';
 
 class FastingDataPage extends ConsumerStatefulWidget {

@@ -35,7 +35,7 @@ Text kf2_2 = Text(
 );
 Text kf3Head = Text(
   "3. Doctor Communication:",
-  style: bold2,
+  style: bold1,
 );
 Text kf3_1 = Text(
   "Effortlessly share stored data, including fasting and random blood sugar test results, with healthcare professionals for remote review and consultation.",

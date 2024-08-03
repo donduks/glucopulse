@@ -25,7 +25,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
         children: [
           Container(
             width: screenSize.width,
-            height: screenSize.height * 0.16,
+            height: screenSize.height * 0.145,
             decoration: BoxDecoration(
               color: kTextFieldFillColor,
               boxShadow: const [
@@ -96,137 +96,170 @@ class _AboutPageState extends ConsumerState<AboutPage> {
             ),
           ),
           SizedBox(
-            height: screenSize.height * 0.03,
+            height: screenSize.height * 0.006,
           ),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: screenSize.width * 0.05),
-                      child: about,
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
-                  child: const Paragraphs(),
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: screenSize.width * 0.05,
-                          vertical: screenSize.height * 0.05),
-                      child: kfs,
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: screenSize.width * 0.05),
-                      child: kf1Head,
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          bottom: screenSize.height * 0.07,
-                          left: screenSize.width * 0.095),
-                      child: CircleAvatar(
-                        radius: 4,
-                        backgroundColor: kButtonsTextColor,
+          SizedBox(
+            height: screenSize.height * 0.78,
+            width: screenSize.width * 0.9,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenSize.width * 0.05),
+                        child: about,
                       ),
-                    ),
-                    SizedBox(
-                      width: screenSize.width * 0.03,
-                    ),
-                    SizedBox(
-                        width: screenSize.width * 0.7,
-                        height: screenSize.height * 0.1,
-                        child: kf1_1),
-                  ],
-                ),
-                SizedBox(
-                  height: screenSize.height * 0.01,
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          bottom: screenSize.height * 0.07,
-                          left: screenSize.width * 0.095),
-                      child: CircleAvatar(
-                        radius: 4,
-                        backgroundColor: kButtonsTextColor,
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: screenSize.width * 0.05),
+                    child: const Paragraphs(),
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenSize.width * 0.05,
+                            vertical: screenSize.height * 0.05),
+                        child: kfs,
                       ),
-                    ),
-                    SizedBox(
-                      width: screenSize.width * 0.03,
-                    ),
-                    SizedBox(
-                        width: screenSize.width * 0.7,
-                        height: screenSize.height * 0.1,
-                        child: kf1_2),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: screenSize.width * 0.05),
-                      child: kf2Head,
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          bottom: screenSize.height * 0.07,
-                          left: screenSize.width * 0.095),
-                      child: CircleAvatar(
-                        radius: 4,
-                        backgroundColor: kButtonsTextColor,
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenSize.width * 0.05),
+                        child: kf1Head,
                       ),
-                    ),
-                    SizedBox(
-                      width: screenSize.width * 0.03,
-                    ),
-                    SizedBox(
-                        width: screenSize.width * 0.7,
-                        height: screenSize.height * 0.09,
-                        child: kf2_1),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          bottom: screenSize.height * 0.07,
-                          left: screenSize.width * 0.095),
-                      child: CircleAvatar(
-                        radius: 4,
-                        backgroundColor: kButtonsTextColor,
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            bottom: screenSize.height * 0.07,
+                            left: screenSize.width * 0.095),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: screenSize.width * 0.03,
-                    ),
-                    SizedBox(
-                        width: screenSize.width * 0.7,
-                        height: screenSize.height * 0.1,
-                        child: kf2_2),
-                  ],
-                ),
-              ],
+                      SizedBox(
+                        width: screenSize.width * 0.03,
+                      ),
+                      SizedBox(
+                          width: screenSize.width * 0.7,
+                          height: screenSize.height * 0.1,
+                          child: kf1_1),
+                    ],
+                  ),
+                  SizedBox(
+                    height: screenSize.height * 0.01,
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            bottom: screenSize.height * 0.07,
+                            left: screenSize.width * 0.095),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.03,
+                      ),
+                      SizedBox(
+                          width: screenSize.width * 0.7,
+                          height: screenSize.height * 0.1,
+                          child: kf1_2),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenSize.width * 0.05),
+                        child: kf2Head,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            bottom: screenSize.height * 0.07,
+                            left: screenSize.width * 0.095),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.03,
+                      ),
+                      SizedBox(
+                          width: screenSize.width * 0.7,
+                          height: screenSize.height * 0.09,
+                          child: kf2_1),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            bottom: screenSize.height * 0.07,
+                            left: screenSize.width * 0.095),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.03,
+                      ),
+                      SizedBox(
+                          width: screenSize.width * 0.7,
+                          height: screenSize.height * 0.1,
+                          child: kf2_2),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenSize.width * 0.05),
+                        child: kf3Head,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            bottom: screenSize.height * 0.07,
+                            left: screenSize.width * 0.095),
+                        child: CircleAvatar(
+                          radius: 4,
+                          backgroundColor: kButtonsTextColor,
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenSize.width * 0.03,
+                      ),
+                      SizedBox(
+                          width: screenSize.width * 0.7,
+                          height: screenSize.height * 0.09,
+                          child: kf3_1),
+                    ],
+                  ),
+                ],
+              ),
             ),
           )
         ],

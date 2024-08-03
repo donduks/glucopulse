@@ -8,8 +8,8 @@ import 'package:gluco_pulse3/home_page/presentation/info_cards.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../../data_storage/aplication/box_data.dart';
-import '../../data_storage/aplication/box_data2.dart';
+import '../../data_storage/infrastructure/box_data.dart';
+import '../../data_storage/infrastructure/box_data2.dart';
 import '../../data_storage/domain/blood_sugar_entry.dart';
 import '../../data_storage/domain/blood_sugar_entry2.dart';
 import '../infrastructure/sugar_measurement_color.dart';

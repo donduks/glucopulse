@@ -50,8 +50,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Data',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.info),
-            label: 'Info',
+            icon: Icon(Icons.info_rounded),
+            label: 'About',
           ),
         ],
       ),

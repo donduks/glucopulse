@@ -6,7 +6,7 @@ import 'package:share_plus/share_plus.dart';
 
 import '../../home_page/widgets/circles.dart';
 import '../../home_page/widgets/colors.dart';
-import '../aplication/box_data2.dart';
+import '../infrastructure/box_data2.dart';
 import '../domain/blood_sugar_entry2.dart';
 
 class RandomDataPage extends ConsumerStatefulWidget {
