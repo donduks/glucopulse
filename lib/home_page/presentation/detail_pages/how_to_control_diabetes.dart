@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gluco_pulse3/home_page/presentation/detail_pages/my_entries.dart';
 
-import '../../widgets/colors.dart';
+import '../../../core/colors.dart';
 import '../../widgets/text_style.dart';
 import 'detail_page_header.dart';
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gluco_pulse3/home_page/infrastructure/sugar_measurement_color.dart';
 import 'package:gluco_pulse3/home_page/widgets/circles.dart';
-import 'package:gluco_pulse3/home_page/widgets/colors.dart';
+import 'package:gluco_pulse3/core/colors.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 

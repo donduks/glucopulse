@@ -4,7 +4,7 @@ import 'package:gluco_pulse3/about/about_input.dart';
 import 'package:gluco_pulse3/about/paragraphs.dart';
 
 import '../home_page/shared/providers.dart';
-import '../home_page/widgets/colors.dart';
+import '../core/colors.dart';
 
 class AboutPage extends ConsumerStatefulWidget {
   const AboutPage({super.key});

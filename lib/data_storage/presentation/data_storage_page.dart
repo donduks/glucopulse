@@ -5,7 +5,7 @@ import 'package:gluco_pulse3/data_storage/presentation/random_storage_page.dart'
 
 import '../../home_page/shared/providers.dart';
 import '../../home_page/widgets/buttons.dart';
-import '../../home_page/widgets/colors.dart';
+import '../../core/colors.dart';
 
 class AppDataStoragePage extends ConsumerStatefulWidget {
   const AppDataStoragePage({super.key});

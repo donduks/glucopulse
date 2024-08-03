@@ -5,7 +5,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../home_page/widgets/circles.dart';
-import '../../home_page/widgets/colors.dart';
+import '../../core/colors.dart';
 import '../infrastructure/box_data2.dart';
 import '../domain/blood_sugar_entry2.dart';
 

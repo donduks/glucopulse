@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gluco_pulse3/home_page/widgets/sugar_measurement_text.dart';
+import 'package:gluco_pulse3/core/sugar_measurement_text.dart';
 
-import '../widgets/colors.dart';
+import '../../core/colors.dart';
 
 Color getCircleColor(bool isFasting, double value) {
   if (isFasting) {

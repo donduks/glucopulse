@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gluco_pulse3/home_page/widgets/colors.dart';
+import 'package:gluco_pulse3/core/colors.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../home_page/shared/providers.dart';

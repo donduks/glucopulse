@@ -15,7 +15,7 @@ import '../../data_storage/domain/blood_sugar_entry2.dart';
 import '../infrastructure/sugar_measurement_color.dart';
 import '../widgets/buttons.dart';
 import '../widgets/circles.dart';
-import '../widgets/colors.dart';
+import '../../core/colors.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});

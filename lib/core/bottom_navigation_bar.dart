@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-import '../../about/about_page.dart';
-import '../../converter/core/tabs.dart';
-import '../../data_storage/presentation/data_storage_page.dart';
-import '../presentation/home_page.dart';
+import '../about/about_page.dart';
+import '../converter/core/tabs.dart';
+import '../data_storage/presentation/data_storage_page.dart';
+import '../home_page/presentation/home_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});

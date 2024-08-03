@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gluco_pulse3/home_page/shared/providers.dart';
-import 'package:gluco_pulse3/home_page/widgets/colors.dart';
+import 'package:gluco_pulse3/core/colors.dart';
 
 import '../presentation/mgdl_converter.dart';
 import '../presentation/mmol_converter.dart';

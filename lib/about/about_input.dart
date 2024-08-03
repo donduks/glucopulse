@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gluco_pulse3/home_page/widgets/colors.dart';
+import 'package:gluco_pulse3/core/colors.dart';
 
 Text about = Text(
   "About",
