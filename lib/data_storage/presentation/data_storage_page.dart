@@ -49,7 +49,7 @@ class _AppDataStoragePageState extends ConsumerState<AppDataStoragePage> {
                   padding:
                       EdgeInsets.symmetric(horizontal: screenSize.width * 0.08),
                   child: Text(
-                    'Hello $name ',
+                    name,
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: kButtonsTextColor,
@@ -85,11 +85,11 @@ class _AppDataStoragePageState extends ConsumerState<AppDataStoragePage> {
                 text: Text(
                   'Fasting',
                   style: TextStyle(
-                    color: isFasting ? Colors.black : Colors.white,
+                    color: isFasting ? Colors.black : Colors.grey,
                   ),
                 ),
-                color: isFasting ? kAppColor1 : kAppColor2,
-                offset: isFasting ? const Offset(0, 3) : const Offset(0, 0),
+                color: isFasting ? kAppColor2 : kAppColor1,
+                offset: isFasting ? const Offset(0, 0) : const Offset(0, 3),
               ),
               SizedBox(
                 width: screenSize.width * 0.28,
@@ -107,11 +107,11 @@ class _AppDataStoragePageState extends ConsumerState<AppDataStoragePage> {
                 text: Text(
                   'Random',
                   style: TextStyle(
-                    color: isRandom ? Colors.black : Colors.white,
+                    color: isRandom ? Colors.black : Colors.grey,
                   ),
                 ),
-                color: isRandom ? kAppColor1 : kAppColor2,
-                offset: isRandom ? const Offset(0, 3) : const Offset(0, 0),
+                color: isRandom ? kAppColor2 : kAppColor1,
+                offset: isRandom ? const Offset(0, 0) : const Offset(0, 3),
               ),
             ],
           ),

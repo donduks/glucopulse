@@ -17,7 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0;
   final screens = [
     const HomePage(),
-    const Tabs(),
+    const ConverterPage(),
     const AppDataStoragePage(),
     const AboutPage(),
   ];

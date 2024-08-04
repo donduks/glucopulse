@@ -71,7 +71,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     Padding(
                       padding: EdgeInsets.only(left: screenSize.width * 0.08),
                       child: Text(
-                        'Hello $name',
+                        name,
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           color: kButtonsTextColor,
@@ -111,12 +111,14 @@ class _HomePageState extends ConsumerState<HomePage> {
                       text: Text(
                         'Fasting',
                         style: TextStyle(
-                          color: isFasting ? Colors.black : Colors.white,
-                        ),
+                            color: isFasting ? Colors.black : Colors.grey,
+                            fontWeight: isFasting
+                                ? FontWeight.bold
+                                : FontWeight.normal),
                       ),
-                      color: isFasting ? kAppColor1 : kAppColor2,
+                      color: isFasting ? kAppColor2 : kAppColor1,
                       offset:
-                          isFasting ? const Offset(0, 3) : const Offset(0, 0),
+                          isFasting ? const Offset(0, 0) : const Offset(0, 3),
                     ),
                     SizedBox(
                       width: screenSize.width * 0.23,
@@ -134,12 +136,13 @@ class _HomePageState extends ConsumerState<HomePage> {
                       text: Text(
                         'Random',
                         style: TextStyle(
-                          color: isRandom ? Colors.black : Colors.white,
-                        ),
+                            color: isRandom ? Colors.black : Colors.grey,
+                            fontWeight:
+                                isRandom ? FontWeight.bold : FontWeight.normal),
                       ),
-                      color: isRandom ? kAppColor1 : kAppColor2,
+                      color: isRandom ? kAppColor2 : kAppColor1,
                       offset:
-                          isRandom ? const Offset(0, 3) : const Offset(0, 0),
+                          isRandom ? const Offset(0, 0) : const Offset(0, 3),
                     ),
                   ],
                 ),

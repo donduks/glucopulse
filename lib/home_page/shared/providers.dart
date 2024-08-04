@@ -6,10 +6,5 @@ final nameProvider = StateNotifierProvider<Name, String>((ref) {
   return Name();
 });
 
-/* final themeNotifierProvider =
-    StateNotifierProvider<ThemeNotifier, ThemeModeType>(
-  (ref) => ThemeNotifier(),
-); */
-
 final numberProvider =
     StateNotifierProvider<MyConverter, String>((ref) => MyConverter());

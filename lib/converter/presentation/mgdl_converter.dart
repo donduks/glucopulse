@@ -180,7 +180,7 @@ class _MgdlConverterState extends ConsumerState<MgdlConverter>
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(
                       screenSize.width * 0.75,
-                      screenSize.height * 0.07,
+                      screenSize.height * 0.05,
                     ),
                     backgroundColor: Colors.green,
                     elevation: 5,
