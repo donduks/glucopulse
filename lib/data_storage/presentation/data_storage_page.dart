@@ -86,6 +86,7 @@ class _AppDataStoragePageState extends ConsumerState<AppDataStoragePage> {
                   'Fasting',
                   style: TextStyle(
                     color: isFasting ? Colors.black : Colors.grey,
+                    fontWeight: isFasting ? FontWeight.bold : FontWeight.normal,
                   ),
                 ),
                 color: isFasting ? kAppColor2 : kAppColor1,
@@ -108,6 +109,7 @@ class _AppDataStoragePageState extends ConsumerState<AppDataStoragePage> {
                   'Random',
                   style: TextStyle(
                     color: isRandom ? Colors.black : Colors.grey,
+                    fontWeight: isRandom ? FontWeight.bold : FontWeight.normal,
                   ),
                 ),
                 color: isRandom ? kAppColor2 : kAppColor1,

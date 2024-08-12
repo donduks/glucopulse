@@ -552,10 +552,11 @@ class _HomePageState extends ConsumerState<HomePage> {
                                         ),
                                         Padding(
                                           padding: EdgeInsets.only(
-                                              left: screenSize.width * 0.08),
+                                              left: screenSize.width * 0.04),
                                           child: Text(
                                             'Average Blood Sugar: ${average.toStringAsFixed(2)} mmol',
                                             style: TextStyle(
+                                                fontWeight: FontWeight.bold,
                                                 color: kButtonsTextColor,
                                                 fontSize:
                                                     screenSize.width * 0.035),

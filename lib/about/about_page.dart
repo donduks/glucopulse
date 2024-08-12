@@ -26,7 +26,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
           children: [
             Container(
               width: screenSize.width,
-              height: screenSize.height * 0.145,
+              height: screenSize.height * 0.16,
               decoration: BoxDecoration(
                 color: kTextFieldFillColor,
                 boxShadow: const [
@@ -41,11 +41,10 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                   Padding(
                     padding: EdgeInsets.only(left: screenSize.width * 0.08),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
                           padding:
-                              EdgeInsets.only(top: screenSize.height * 0.04),
+                              EdgeInsets.only(top: screenSize.height * 0.06),
                           child: Text(
                             'Hello $name',
                             style: TextStyle(
@@ -90,7 +89,9 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                   ),
                   const Spacer(),
                   Padding(
-                    padding: EdgeInsets.only(right: screenSize.width * 0.08),
+                    padding: EdgeInsets.only(
+                        right: screenSize.width * 0.08,
+                        top: screenSize.height * 0.05),
                     child: CircleAvatar(
                       radius: 30,
                       backgroundImage: const AssetImage('images/beat.gif'),
