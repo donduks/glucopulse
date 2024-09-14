@@ -225,12 +225,12 @@ class _RandomDataPageState extends ConsumerState<RandomDataPage> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: const Text('Add Data'),
+                title: const Text('Add RBS Data'),
                 content: TextField(
                   keyboardType: TextInputType.number,
                   controller: myController2,
                   decoration: const InputDecoration(
-                    hintText: 'Sugar Reading...',
+                    hintText: 'Add in mmol...',
                   ),
                 ),
                 actions: [

@@ -4,7 +4,6 @@ import 'package:gluco_pulse3/home_page/presentation/graph_page_random.dart';
 import 'package:gluco_pulse3/home_page/shared/providers.dart';
 import 'package:gluco_pulse3/home_page/widgets/rectangles.dart';
 import 'package:gluco_pulse3/home_page/presentation/graph_page.dart';
-import 'package:gluco_pulse3/home_page/presentation/info_cards.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -16,6 +15,13 @@ import '../infrastructure/sugar_measurement_color.dart';
 import '../widgets/buttons.dart';
 import '../widgets/circles.dart';
 import '../../core/colors.dart';
+import '../widgets/info_box.dart';
+import '../widgets/text_style.dart';
+import 'detail_pages/diet_plan.dart';
+import 'detail_pages/how_to_control_diabetes.dart';
+import 'detail_pages/hypoglycemia.dart';
+import 'detail_pages/learn_about_bs.dart';
+import 'detail_pages/role_of_vitamin.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -259,20 +265,19 @@ class _HomePageState extends ConsumerState<HomePage> {
                                                   ),
                                                 ),
                                                 Positioned(
-                                                    top: screenSize.height *
-                                                        0.19,
-                                                    left:
-                                                        screenSize.width * 0.58,
-                                                    child: Text(
-                                                      'fasting',
-                                                      style: TextStyle(
-                                                        fontSize:
-                                                            screenSize.width *
-                                                                0.05,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                    )),
+                                                  top: screenSize.height * 0.19,
+                                                  left: screenSize.width * 0.58,
+                                                  child: Text(
+                                                    'fasting',
+                                                    style: TextStyle(
+                                                      fontSize:
+                                                          screenSize.width *
+                                                              0.05,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ),
                                                 Positioned(
                                                   top: screenSize.height * 0.04,
                                                   left: screenSize.width * 0.55,
@@ -851,7 +856,99 @@ class _HomePageState extends ConsumerState<HomePage> {
                   ),
                 ),
               ),
-              const InfoCards(),
+              //const InfoCards(),
+              Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: screenSize.width * 0.035),
+                child: Column(
+                  children: [
+                    Hero(
+                      tag: 'learn',
+                      child: InfoBox(
+                        image: const AssetImage('images/labs.jpg'),
+                        text: Text('Learn about Blood Sugar',
+                            style: infoCardStyle),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LearnAboutBS()));
+                        },
+                      ),
+                    ),
+                    SizedBox(height: screenSize.height * 0.012),
+                    Hero(
+                      tag: 'diet',
+                      child: InfoBox(
+                        image: const AssetImage('images/labs2.jpg'),
+                        text: Text(
+                          'Diet Plan',
+                          style: infoCardStyle,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DietPlan()));
+                        },
+                      ),
+                    ),
+                    SizedBox(height: screenSize.height * 0.012),
+                    Hero(
+                      tag: 'role',
+                      child: InfoBox(
+                        image: const AssetImage('images/control.jpg'),
+                        text: Text(
+                          'Role of Vitamins Diabetes',
+                          style: infoCardStyle,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const RoleOfVitamin()));
+                        },
+                      ),
+                    ),
+                    SizedBox(height: screenSize.height * 0.012),
+                    Hero(
+                      tag: 'hypo',
+                      child: InfoBox(
+                        image: const AssetImage('images/hyper.jpg'),
+                        text: Text(
+                          'Hypoglycemia',
+                          style: infoCardStyle,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Hypoglycemia()));
+                        },
+                      ),
+                    ),
+                    SizedBox(height: screenSize.height * 0.012),
+                    Hero(
+                      tag: 'how',
+                      child: InfoBox(
+                        image: const AssetImage('images/howtoc.jpg'),
+                        text: Text(
+                          'How to Control Diabetes',
+                          style: infoCardStyle,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const HowToControlDiabetes()));
+                        },
+                      ),
+                    ),
+                    SizedBox(height: screenSize.height * 0.08),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

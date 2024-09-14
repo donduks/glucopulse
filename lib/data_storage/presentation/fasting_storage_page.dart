@@ -225,12 +225,12 @@ class _FastingDataPageState extends ConsumerState<FastingDataPage> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: const Text('Add Data'),
+                title: const Text('Add FBS Data'),
                 content: TextField(
                   keyboardType: TextInputType.number,
                   controller: myController,
                   decoration: const InputDecoration(
-                    hintText: 'Sugar Reading...',
+                    hintText: 'Add in mmol...',
                   ),
                 ),
                 actions: [

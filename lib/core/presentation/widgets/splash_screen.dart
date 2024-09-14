@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: EdgeInsets.only(right: screenSize.width * 0.08),
+          padding: EdgeInsets.only(left: screenSize.width * 0.009),
           child: CircleAvatar(
             radius: 80,
             backgroundImage: const AssetImage('images/beat.gif'),
