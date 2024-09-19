@@ -33,7 +33,7 @@ class GraphPage extends StatelessWidget {
                   BarChartRodData(
                     toY: entry.value.toDouble(),
                     color: getFastingCircleColor(entry.value),
-                    width: 15,
+                    width: 10,
                     borderRadius: BorderRadius.circular(2),
                     backDrawRodData: BackgroundBarChartRodData(
                       show: true,
@@ -48,7 +48,7 @@ class GraphPage extends StatelessWidget {
           }
 
           return Padding(
-            padding: const EdgeInsets.all(2.0),
+            padding: const EdgeInsets.all(1.0),
             child: BarChart(
               BarChartData(
                 gridData: const FlGridData(show: false),
