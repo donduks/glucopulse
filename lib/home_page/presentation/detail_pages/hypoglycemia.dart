@@ -28,14 +28,14 @@ class Hypoglycemia extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: screenSize.height * 0.8,
+              height: screenSize.height * 0.7,
               width: screenSize.width * 0.9,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     hypoIntro,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     causesOfHypo,
                     one,
@@ -44,15 +44,15 @@ class Hypoglycemia extends StatelessWidget {
                     ),
                     two,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     three,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     four,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     five,
                     SizedBox(
@@ -272,31 +272,31 @@ class Hypoglycemia extends StatelessWidget {
                     ),
                     preventionOfHypo,
                     SizedBox(
-                      height: screenSize.height * 0.006,
+                      height: screenSize.height * 0.005,
                     ),
                     prevention1,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     prevention2,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     prevention3,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     prevention4,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     prevention5,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     prevention6,
                     SizedBox(
-                      height: screenSize.height * 0.02,
+                      height: screenSize.height * 0.01,
                     ),
                     prevention7,
                     SizedBox(

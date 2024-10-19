@@ -27,7 +27,7 @@ class RoleOfVitamin extends StatelessWidget {
             ),
             Center(
               child: SizedBox(
-                height: screenSize.height * 0.8,
+                height: screenSize.height * 0.7,
                 width: screenSize.width * 0.9,
                 child: SingleChildScrollView(
                   child: Column(

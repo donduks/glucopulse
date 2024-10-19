@@ -259,11 +259,15 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                           width: screenSize.width * 0.03,
                         ),
                         SizedBox(
-                            width: screenSize.width * 0.7,
-                            height: screenSize.height * 0.09,
-                            child: kf3_1),
+                          width: screenSize.width * 0.7,
+                          height: screenSize.height * 0.1,
+                          child: kf3_1,
+                        ),
                       ],
                     ),
+                    SizedBox(
+                      height: screenSize.height * 0.04,
+                    )
                   ],
                 ),
               ),

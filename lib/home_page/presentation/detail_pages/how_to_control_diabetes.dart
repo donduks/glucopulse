@@ -29,14 +29,14 @@ class HowToControlDiabetes extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: screenSize.height * 0.8,
+            height: screenSize.height * 0.7,
             width: screenSize.width * 0.9,
             child: SingleChildScrollView(
               child: Column(
                 children: [
                   howToIntro,
                   SizedBox(
-                    height: screenSize.height * 0.02,
+                    height: screenSize.height * 0.01,
                   ),
                   howTo1,
                   Row(

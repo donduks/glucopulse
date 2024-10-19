@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../home_page/shared/providers.dart';
@@ -51,18 +51,10 @@ class _InfoPageState extends ConsumerState<InfoPage> {
       ),
       body: const SafeArea(
         child: Column(
-          children: [
-            /* TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AppThemePage()));
-                },
-                child: const Text('Switch Theme')) */
-          ],
+          children: [],
         ),
       ),
     );
   }
 }
+ */

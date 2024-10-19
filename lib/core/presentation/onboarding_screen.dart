@@ -46,9 +46,10 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
 
   @override
   Widget build(BuildContext context) {
+    final screen = MediaQuery.sizeOf(context);
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50),
+        padding: EdgeInsets.symmetric(vertical: screen.height * 0.02),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
