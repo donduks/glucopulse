@@ -53,6 +53,7 @@ dependencies:
   share_plus: ^10.0.2
   shared_preferences: ^2.3.1
   smooth_page_indicator: ^1.2.0+3
+  loading_animation_widget: null
 
 dev_dependencies:
   build_runner: ^2.4.11
