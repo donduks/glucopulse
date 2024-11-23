@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 
-class Name extends StateNotifier<String> {
-  Name() : super('') {
+class UserName extends StateNotifier<String> {
+  UserName() : super('') {
     // Initialize the state with the value from Hive
     state = box.get('userName', defaultValue: 'Guest')!;
   }
