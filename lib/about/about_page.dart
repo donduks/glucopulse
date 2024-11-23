@@ -26,7 +26,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
           children: [
             Container(
               width: screenSize.width,
-              height: screenSize.height * 0.16,
+              height: screenSize.height * 0.2,
               decoration: BoxDecoration(
                 color: kTextFieldFillColor,
                 boxShadow: const [
@@ -57,27 +57,28 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                         TextButton(
                           onPressed: () {
                             showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    title: const Text('Your User Name'),
-                                    content: TextField(
-                                      controller: nameController,
-                                    ),
-                                    actions: [
-                                      TextButton(
-                                          onPressed: () {
-                                            ref
-                                                .read(nameProvider.notifier)
-                                                .addName(nameController.text);
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: const Text('Your User Name'),
+                                  content: TextField(
+                                    controller: nameController,
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          ref
+                                              .read(nameProvider.notifier)
+                                              .addName(nameController.text);
 
-                                            Navigator.pop(context);
-                                            nameController.clear();
-                                          },
-                                          child: const Text('Save'))
-                                    ],
-                                  );
-                                });
+                                          Navigator.pop(context);
+                                          nameController.clear();
+                                        },
+                                        child: const Text('Save'))
+                                  ],
+                                );
+                              },
+                            );
                           },
                           child: Text(
                             'click to enter name',
@@ -129,7 +130,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                         Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: screenSize.width * 0.05,
-                              vertical: screenSize.height * 0.05),
+                              vertical: screenSize.height * 0.04),
                           child: kfs,
                         ),
                       ],
@@ -159,7 +160,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                         ),
                         SizedBox(
                             width: screenSize.width * 0.7,
-                            height: screenSize.height * 0.1,
+                            height: screenSize.height * 0.132,
                             child: kf1_1),
                       ],
                     ),
@@ -182,7 +183,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                         ),
                         SizedBox(
                             width: screenSize.width * 0.7,
-                            height: screenSize.height * 0.1,
+                            height: screenSize.height * 0.13,
                             child: kf1_2),
                       ],
                     ),
@@ -211,7 +212,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                         ),
                         SizedBox(
                             width: screenSize.width * 0.7,
-                            height: screenSize.height * 0.12,
+                            height: screenSize.height * 0.15,
                             child: kf2_1),
                       ],
                     ),
@@ -231,7 +232,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                         ),
                         SizedBox(
                             width: screenSize.width * 0.7,
-                            height: screenSize.height * 0.1,
+                            height: screenSize.height * 0.15,
                             child: kf2_2),
                       ],
                     ),
@@ -260,13 +261,13 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                         ),
                         SizedBox(
                           width: screenSize.width * 0.7,
-                          height: screenSize.height * 0.1,
+                          height: screenSize.height * 0.17,
                           child: kf3_1,
                         ),
                       ],
                     ),
                     SizedBox(
-                      height: screenSize.height * 0.04,
+                      height: screenSize.height * 0.2,
                     )
                   ],
                 ),

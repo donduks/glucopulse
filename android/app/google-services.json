@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "236517697089",
+    "project_id": "gluco-pulse",
+    "storage_bucket": "gluco-pulse.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236517697089:android:117cfbb0f187a95be448c0",
+        "android_client_info": {
+          "package_name": "com.donduks.gluco_pulse3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236517697089-akecgqcgkm6mvlb7osb96dck412he48s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaCMycPJFVh9XAJXv0xJbeCqQmfl126eU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236517697089-akecgqcgkm6mvlb7osb96dck412he48s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "236517697089-qbam55ojf76cphqj2cfhesjd26lscof9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.glucoPulse3"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
