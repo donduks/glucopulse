@@ -14,7 +14,7 @@ class SignInPasswordField extends ConsumerWidget {
     final bool showError = signInState.password.invalid;
     final signInController = ref.read(signInProvider.notifier);
     return TextInputField(
-      hintText: 'Password',
+      hintText: 'Enter your password',
       obscureText: true,
       errorText: showError
           ? Password.showPasswordErrorMessage(signInState.password.error)

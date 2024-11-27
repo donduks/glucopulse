@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gluco_pulse3/core/colors.dart';
 
 import '../component/loading_error.dart';
 import 'controller/google_signin_controller.dart';
@@ -26,6 +27,7 @@ class _GoogleSignInButtonState extends ConsumerState<GoogleSignInButton> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.sizeOf(context);
     ref.listen<GoogleSignInState>(
       googleSignInProvider,
       (previous, current) {
@@ -44,23 +46,23 @@ class _GoogleSignInButtonState extends ConsumerState<GoogleSignInButton> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Image(
-          image: AssetImage('images/gee.png'),
-          width: 25,
-          height: 25,
-        ),
-        TextButton(
-          child: const Text(
-            "Sign In With google",
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-            ),
-          ),
-          onPressed: () {
+        GestureDetector(
+          onTap: () {
             ref.read(googleSignInProvider.notifier).signInWithGoogle();
           },
+          child: Container(
+            height: screenSize.height * 0.05,
+            width: screenSize.width * 0.17,
+            decoration: BoxDecoration(
+              color: kAppColor2,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Image(
+              image: const AssetImage('images/gee.png'),
+              width: screenSize.width * 0.02,
+              height: screenSize.height * 0.02,
+            ),
+          ),
         ),
       ],
     );

@@ -14,7 +14,7 @@ class SignInEmailField extends ConsumerWidget {
     final bool showError = signInState.email.invalid;
     final signInController = ref.read(signInProvider.notifier);
     return TextInputField(
-      hintText: 'Email',
+      hintText: 'Enter your email',
       errorText: showError
           ? Email.showEmailErrorMessage(signInState.email.error)
           : null,

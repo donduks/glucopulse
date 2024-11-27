@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/colors.dart';
 import 'size_fade_switcher.dart';
 
 class TextInputField extends StatelessWidget {
@@ -24,10 +25,10 @@ class TextInputField extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
+              color: kAppColor2,
+              borderRadius: BorderRadius.circular(25),
               border: Border.all(
-                color: const Color(0xFFD0D0D0),
+                color: kAppColor2,
                 width: 1.5,
               )),
           child: TextField(
@@ -35,12 +36,14 @@ class TextInputField extends StatelessWidget {
             onChanged: onChanged,
             obscureText: obscureText,
             decoration: InputDecoration(
+              filled: true,
+              fillColor: kAppColor2,
               border: InputBorder.none,
               hintText: hintText,
               hintStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),

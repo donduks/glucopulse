@@ -6,6 +6,9 @@ import 'package:gluco_pulse3/core/presentation/widgets/splash_screen.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'authentication/auth_view.dart';
+import 'authentication/controller/auth_controller.dart';
+
 class AppWidget extends ConsumerStatefulWidget {
   const AppWidget({super.key});
 
@@ -36,9 +39,23 @@ class _AppWidgetState extends ConsumerState<AppWidget> {
       home: const SplashScreen(),
       routes: {
         '/onboardingOrBottomNavBar': (context) => _onboardingCompleted
-            ? const BottomNavBar()
+            ? GetHome().getHome(ref)
             : const OnBoardingScreen1(),
       },
     );
+  }
+}
+
+class GetHome {
+  Widget getHome(WidgetRef ref) {
+    final authenticationState = ref.watch(authProvider);
+    if (authenticationState.status == AuthenticationStatus.authenticated) {
+      return const BottomNavBar();
+    } else if (authenticationState.status ==
+        AuthenticationStatus.unauthenticated) {
+      return const AuthView();
+    } else {
+      return const AuthView();
+    }
   }
 }
